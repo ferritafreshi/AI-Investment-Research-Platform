@@ -1,0 +1,16 @@
+{
+  "current_week": 1,
+  "total_weeks": 12,
+  "current_lesson": "Foundations: Environment, GitHub, and Vision",
+  "project_completion_percent": 8,
+  "learning_progress_percent": 8,
+  "github_progress_percent": 25,
+  "completed_milestones": [
+    "Installed Python and GitHub Desktop",
+    "Created and published GitHub repository",
+    "Built project folder structure"
+  ],
+  "current_blockers": [],
+  "recommended_next_task": "Write and commit Vision.md, Project_Constitution.md, and README intro",
+  "estimated_time_remaining_hours": 90
+}
