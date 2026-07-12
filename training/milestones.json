@@ -1,7 +1,7 @@
 [
   { "week": 1, "title": "Foundations & GitHub Setup", "status": "complete" },
-  { "week": 2, "title": "First Live Data Pull", "status": "in_progress" },
-  { "week": 3, "title": "Scoring Engine v1", "status": "upcoming" },
+  { "week": 2, "title": "First Live Data Pull", "status": "complete" },
+  { "week": 3, "title": "Scoring Engine v1", "status": "in_progress" },
   { "week": 4, "title": "Working Dashboard MVP", "status": "upcoming" },
   { "week": 5, "title": "Expand Company Universe", "status": "upcoming" },
   { "week": 6, "title": "SEC Filings & AI Summaries", "status": "upcoming" },

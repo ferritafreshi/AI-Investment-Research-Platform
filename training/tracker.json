@@ -6,9 +6,15 @@
   "learning_progress_percent": 15,
   "github_progress_percent": 100,
   "completed_milestones": [
-    " Week 2: first live data pull with yfinance"
+    "Week 1: Installed Python, GitHub Desktop, VS Code",
+    "Week 1: Created and published GitHub repository",
+    "Week 1: Built project folder structure",
+    "Week 1: Wrote Vision.md, Project_Constitution.md, and README",
+    "Week 2: Set up virtual environment and installed yfinance",
+    "Week 2: Built fetch_data.py and pulled live data for MSFT, NVDA, COST",
+    "Week 2: Saved JSON snapshots to data/raw/"
   ],
+  "recommended_next_task": "Start Week 3: build the scoring engine"
   "current_blockers": [],
-  "recommended_next_task": "Start Week 3: build the scoring engine",
   "estimated_time_remaining_hours": 88
 }
