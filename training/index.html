@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Investment Research Platform — Training Tracker</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 40px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  .subtitle { color: #94a3b8; margin-bottom: 30px; }
+  .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+  .bar-bg { background: #334155; border-radius: 8px; height: 14px; overflow: hidden; margin-top: 8px; }
+  .bar-fill { background: #22c55e; height: 100%; transition: width 0.4s; }
+  .row { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 14px; }
+  ul { padding-left: 18px; }
+  .milestone { padding: 8px 0; border-bottom: 1px solid #334155; font-size: 14px; }
+  .in_progress { color: #facc15; }
+  .complete { color: #22c55e; }
+  .upcoming { color: #64748b; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AI Investment Research Platform</h1>
+  <div class="subtitle">Training Portal — v0.1 (Week 1 basic tracker)</div>
+
+  <div class="card">
+    <div class="row"><span>Overall Progress</span><span id="pct">--%</span></div>
+    <div class="bar-bg"><div class="bar-fill" id="bar" style="width:0%"></div></div>
+  </div>
+
+  <div class="card">
+    <div class="row"><span>Current Week</span><span id="week"></span></div>
+    <div class="row"><span>Current Lesson</span><span id="lesson"></span></div>
+    <div class="row"><span>Estimated Time Remaining</span><span id="time"></span></div>
+    <div class="row"><span>Next Task</span><span id="nexttask"></span></div>
+  </div>
+
+  <div class="card">
+    <h3>Milestones</h3>
+    <div id="milestones"></div>
+  </div>
+</div>
+
+<script>
+fetch('tracker.json')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('pct').textContent = data.project_completion_percent + '%';
+    document.getElementById('bar').style.width = data.project_completion_percent + '%';
+    document.getElementById('week').textContent = 'Week ' + data.current_week + ' of ' + data.total_weeks;
+    document.getElementById('lesson').textContent = data.current_lesson;
+    document.getElementById('time').textContent = data.estimated_time_remaining_hours + ' hours';
+    document.getElementById('nexttask').textContent = data.recommended_next_task;
+  });
+
+fetch('milestones.json')
+  .then(res => res.json())
+  .then(list => {
+    const container = document.getElementById('milestones');
+    list.forEach(m => {
+      const div = document.createElement('div');
+      div.className = 'milestone';
+      div.innerHTML = 'Week ' + m.week + ': ' + m.title + ' — <span class="' + m.status + '">' + m.status.replace('_',' ') + '</span>';
+      container.appendChild(div);
+    });
+  });
+</script>
+</body>
+</html>

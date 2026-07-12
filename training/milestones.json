@@ -1,0 +1,14 @@
+[
+  { "week": 1, "title": "Foundations & GitHub Setup", "status": "in_progress" },
+  { "week": 2, "title": "First Live Data Pull", "status": "upcoming" },
+  { "week": 3, "title": "Scoring Engine v1", "status": "upcoming" },
+  { "week": 4, "title": "Working Dashboard MVP", "status": "upcoming" },
+  { "week": 5, "title": "Expand Company Universe", "status": "upcoming" },
+  { "week": 6, "title": "SEC Filings & AI Summaries", "status": "upcoming" },
+  { "week": 7, "title": "News & Company Comparison", "status": "upcoming" },
+  { "week": 8, "title": "Full Training Portal", "status": "upcoming" },
+  { "week": 9, "title": "Charts & Visual Trends", "status": "upcoming" },
+  { "week": 10, "title": "AI Q&A Engine", "status": "upcoming" },
+  { "week": 11, "title": "Dashboard Polish & Risk Analysis", "status": "upcoming" },
+  { "week": 12, "title": "MVP Hardening & Release", "status": "upcoming" }
+]
