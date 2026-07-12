@@ -1,6 +1,7 @@
 # Import the yfinance library so we can download company financial data.
 import yfinance as yf
-
+import json
+import os
 
 # Create a function that accepts a stock ticker (for example: "MSFT").
 def get_company_snapshot(ticker):
@@ -59,3 +60,25 @@ def get_company_snapshot(ticker):
 
         # Return nothing because the request failed.
         return None
+
+
+# This code only runs when we execute this file directly.
+if __name__ == "__main__":
+
+    # Make sure the data/raw folder exists before saving anything.
+    os.makedirs("data/raw", exist_ok=True)
+
+    # List of tickers we want to test.
+    tickers = ["MSFT", "NVDA", "COST"]
+
+    # Loop through each ticker, fetch its snapshot, print it, and save it.
+    for ticker in tickers:
+        result = get_company_snapshot(ticker)
+        print(result)
+
+        # Only save if we actually got data back.
+        if result is not None:
+            file_path = f"data/raw/{ticker}.json"
+            with open(file_path, "w") as file:
+                json.dump(result, file, indent=4)
+            print(f"Saved {ticker} data to {file_path}")

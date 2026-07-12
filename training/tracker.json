@@ -1,17 +1,14 @@
 {
-  "current_week": 1,
+  "current_week": 2,
   "total_weeks": 12,
-  "current_lesson": "Foundations: Environment, GitHub, and Vision",
-  "project_completion_percent": 10,
-  "learning_progress_percent": 10,
-  "github_progress_percent": 30,
+  "current_lesson": "Week 2: First Live Data Pull",
+  "project_completion_percent": 15,
+  "learning_progress_percent": 15,
+  "github_progress_percent": 100,
   "completed_milestones": [
-    "Installed Python and GitHub Desktop",
-    "Created and published GitHub repository",
-    "Built project folder structure",
-    "Wrote and committed Vision.md, Project_Constitution.md, and README intro"
+    " Week 2: first live data pull with yfinance"
   ],
   "current_blockers": [],
-  "recommended_next_task": "Review Week 1 checklist, then start Week 2: first live data pull with yfinance",
+  "recommended_next_task": "Start Week 3: build the scoring engine",
   "estimated_time_remaining_hours": 88
 }
