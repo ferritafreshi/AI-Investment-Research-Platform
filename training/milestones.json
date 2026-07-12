@@ -1,5 +1,5 @@
 [
-  { "week": 1, "title": "Foundations & GitHub Setup", "status": "in_progress" },
+  { "week": 1, "title": "Foundations & GitHub Setup", "status": "complete" },
   { "week": 2, "title": "First Live Data Pull", "status": "upcoming" },
   { "week": 3, "title": "Scoring Engine v1", "status": "upcoming" },
   { "week": 4, "title": "Working Dashboard MVP", "status": "upcoming" },
