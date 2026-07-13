@@ -1,0 +1,15 @@
+{
+    "ticker": "COST",
+    "company_name": "Costco Wholesale Corporation",
+    "overall_score": 74.1,
+    "scores": {
+        "revenue_growth": {
+            "score": 48.2,
+            "explanation": "COST generated a revenue CAGR of 6.6% over the available period. This is considered modest long-term revenue growth, resulting in a score of 48.2/100."
+        },
+        "financial_strength": {
+            "score": 100,
+            "explanation": "COST has an interest coverage ratio of 67.4x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+    }
+}
