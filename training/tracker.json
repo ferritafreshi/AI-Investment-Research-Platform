@@ -1,10 +1,10 @@
 {
-  "current_week": 2,
+  "current_week": 3,
   "total_weeks": 12,
-  "current_lesson": "Week 2: First Live Data Pull",
-  "project_completion_percent": 15,
-  "learning_progress_percent": 15,
-  "github_progress_percent": 30,
+  "current_lesson": "Week 3: Scoring Engine v1",
+  "project_completion_percent": 25,
+  "learning_progress_percent": 25,
+  "github_progress_percent": 40,
   "completed_milestones": [
     "Week 1: Installed Python, GitHub Desktop, VS Code",
     "Week 1: Created and published GitHub repository",
@@ -12,9 +12,11 @@
     "Week 1: Wrote Vision.md, Project_Constitution.md, and README",
     "Week 2: Set up virtual environment and installed yfinance",
     "Week 2: Built fetch_data.py and pulled live data for MSFT, NVDA, COST",
-    "Week 2: Saved JSON snapshots to data/raw/"
+    "Week 2: Saved JSON snapshots to data/raw/",
+    "Week 3: Built scoring engine with Revenue Growth and Financial Strength scores",
+    "Week 3: Generated and saved score reports for MSFT, NVDA, COST"
   ],
   "current_blockers": [],
-  "recommended_next_task": "Start Week 3: build the scoring engine",
-  "estimated_time_remaining_hours": 88
+  "recommended_next_task": "Start Week 4: build the first working HTML dashboard",
+  "estimated_time_remaining_hours": 77
 }
