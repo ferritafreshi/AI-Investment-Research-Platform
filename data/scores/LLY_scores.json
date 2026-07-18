@@ -1,0 +1,15 @@
+{
+    "ticker": "LLY",
+    "company_name": "Eli Lilly and Company",
+    "overall_score": 100.0,
+    "scores": {
+        "revenue_growth": {
+            "score": 100,
+            "explanation": "LLY generated a revenue CAGR of 31.7% over the available period. This is considered exceptional long-term revenue growth, resulting in a score of 100/100."
+        },
+        "financial_strength": {
+            "score": 100,
+            "explanation": "LLY has an interest coverage ratio of 38.0x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+    }
+}

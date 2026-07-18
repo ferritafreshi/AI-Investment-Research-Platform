@@ -1,10 +1,10 @@
 {
-  "current_week": 3,
+  "current_week": 5,
   "total_weeks": 12,
-  "current_lesson": "Week 3: Scoring Engine v1",
-  "project_completion_percent": 25,
-  "learning_progress_percent": 25,
-  "github_progress_percent": 40,
+  "current_lesson": "Week 5: Expand Company Universe",
+  "project_completion_percent": 42,
+  "learning_progress_percent": 42,
+  "github_progress_percent": 42,
   "completed_milestones": [
     "Week 1: Installed Python, GitHub Desktop, VS Code",
     "Week 1: Created and published GitHub repository",
@@ -14,9 +14,15 @@
     "Week 2: Built fetch_data.py and pulled live data for MSFT, NVDA, COST",
     "Week 2: Saved JSON snapshots to data/raw/",
     "Week 3: Built scoring engine with Revenue Growth and Financial Strength scores",
-    "Week 3: Generated and saved score reports for MSFT, NVDA, COST"
+    "Week 3: Generated and saved score reports for MSFT, NVDA, COST",
+    "Week 4: Built dashboard.html, style.css, dashboard.js",
+    "Week 4: Built export_dashboard_data.py to aggregate scores into dashboard_data.json",
+    "Week 4: Dashboard loads and displays company scores in the browser",
+    "Week 5: Created data/watchlist.json with 19 growth stock tickers",
+    "Week 5: Updated fetch_data.py and scoring.py to load tickers from watchlist.json",
+    "Week 5: Scored all 19 companies and confirmed dashboard displays full universe"
   ],
   "current_blockers": [],
-  "recommended_next_task": "Start Week 4: build the first working HTML dashboard",
-  "estimated_time_remaining_hours": 77
+  "recommended_next_task": "Start Week 6: SEC Filings & AI Summaries",
+  "estimated_time_remaining_hours": 63
 }

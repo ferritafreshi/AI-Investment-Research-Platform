@@ -1,0 +1,15 @@
+{
+    "ticker": "PANW",
+    "company_name": "Palo Alto Networks, Inc.",
+    "overall_score": 93.5,
+    "scores": {
+        "revenue_growth": {
+            "score": 87.0,
+            "explanation": "PANW generated a revenue CAGR of 18.8% over the available period. This is considered strong long-term revenue growth, resulting in a score of 87.0/100."
+        },
+        "financial_strength": {
+            "score": 100,
+            "explanation": "PANW has an interest coverage ratio of 654.2x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+    }
+}

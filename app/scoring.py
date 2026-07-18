@@ -2,6 +2,18 @@
 import yfinance as yf
 import os
 import json
+import sys
+
+# Make sure the project root (the folder that contains both "app" and
+# "config") is on the import path. Without this, running the script
+# directly as "python app/scoring.py" fails with:
+#   ModuleNotFoundError: No module named 'config'
+# because Python only adds the script's own folder (app/) to sys.path,
+# not its parent.
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.append(PROJECT_ROOT)
 
 # Create a reusable function that converts a CAGR percentage into a score.
 def growth_score(cagr_percent):
@@ -398,11 +410,15 @@ def generate_score_report(ticker):
         }
 
         # Create the folder if it doesn't already exist.
-        os.makedirs("data/scores", exist_ok=True)
+        from config.settings import SCORES_FOLDER
 
-        # Build the filename.
-        filename = f"data/scores/{ticker.upper()}_scores.json"
+        os.makedirs(SCORES_FOLDER, exist_ok=True)
 
+        filename = os.path.join(
+            SCORES_FOLDER,
+            f"{ticker.upper()}_scores.json"
+        )       
+        
         # Save the report.
         with open(filename, "w", encoding="utf-8") as file:
             json.dump(report, file, indent=4)
@@ -419,14 +435,58 @@ def generate_score_report(ticker):
             "error": str(error)
         }
 
+# Create a function that loads the ticker watchlist from disk.
+def load_watchlist(path=None):
+
+    # Default to the path configured in config/settings.py.
+    if path is None:
+        from config.settings import WATCHLIST_FILE
+        path = WATCHLIST_FILE
+
+    with open(path, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    # watchlist.json stores a "watchlist" key containing a list of
+    # objects, each with a "ticker" field (plus "name" and "reason").
+    entries = data.get("watchlist", [])
+
+    tickers = [entry["ticker"] for entry in entries if "ticker" in entry]
+
+    return tickers
+
+
+# Create a function that generates score reports for every ticker
+# in the watchlist, skipping any ticker that fails.
+def generate_all_score_reports(watchlist_path=None):
+
+    tickers = load_watchlist(watchlist_path)
+
+    reports = {}
+
+    for ticker in tickers:
+
+        print(f"Processing {ticker}...")
+
+        try:
+            report = generate_score_report(ticker)
+
+            # generate_score_report catches its own errors and returns
+            # a dict with an "error" key instead of raising, so check
+            # for that here too.
+            if report.get("overall_score") is None and "error" in report:
+                print(f"  Warning: skipping {ticker} - {report['error']}")
+                continue
+
+            reports[ticker.upper()] = report
+
+            print(f"  Done. Overall Score: {report['overall_score']}")
+
+        except Exception as error:
+            print(f"  Warning: skipping {ticker} - {error}")
+            continue
+
+    return reports
+
+
 if __name__ == "__main__":
-    for ticker in ["MSFT", "NVDA", "COST"]:
-        report = generate_score_report(ticker)
-        print(f"\n{ticker} Overall Score: {report['overall_score']}")
-#        rev = score_revenue_growth(ticker)
-#        strength = score_financial_strength(ticker)
-#        print(f"\n{ticker}:")
-#        print(f"  Revenue Growth Score: {rev['score']}")
-#        print(f"  Revenue Growth: {rev['explanation']}")
-#        print(f"  Financial Strength Score: {strength['score']}")
-#        print(f"  Financial Strength: {strength['explanation']}")
+    generate_all_score_reports()

@@ -1,0 +1,15 @@
+{
+    "ticker": "V",
+    "company_name": "Visa Inc.",
+    "overall_score": 82.8,
+    "scores": {
+        "revenue_growth": {
+            "score": 65.7,
+            "explanation": "V generated a revenue CAGR of 10.9% over the available period. This is considered healthy long-term revenue growth, resulting in a score of 65.7/100."
+        },
+        "financial_strength": {
+            "score": 100,
+            "explanation": "V has an interest coverage ratio of 45.1x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+    }
+}

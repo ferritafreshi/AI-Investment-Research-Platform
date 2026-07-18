@@ -1,0 +1,15 @@
+{
+    "ticker": "AAPL",
+    "company_name": "Apple Inc.",
+    "overall_score": 63.0,
+    "scores": {
+        "revenue_growth": {
+            "score": 26.0,
+            "explanation": "AAPL generated a revenue CAGR of 1.8% over the available period. This is considered weak long-term revenue growth, resulting in a score of 26.0/100."
+        },
+        "financial_strength": {
+            "score": 100,
+            "explanation": "AAPL has an interest coverage ratio of 33.8x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "ticker": "CRWD",
+    "company_name": "CrowdStrike Holdings, Inc.",
+    "overall_score": 67.1,
+    "scores": {
+        "revenue_growth": {
+            "score": 97.2,
+            "explanation": "CRWD generated a revenue CAGR of 29.0% over the available period. This is considered exceptional long-term revenue growth, resulting in a score of 97.2/100."
+        },
+        "financial_strength": {
+            "score": 37,
+            "explanation": "CRWD has an interest coverage ratio of -10.5x. The company's interest coverage is relatively weak, which increases financial risk. Positive free cash flow increased the score."
+        }
+    }
+}

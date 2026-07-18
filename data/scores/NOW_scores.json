@@ -1,0 +1,15 @@
+{
+    "ticker": "NOW",
+    "company_name": "ServiceNow, Inc.",
+    "overall_score": 96.0,
+    "scores": {
+        "revenue_growth": {
+            "score": 91.9,
+            "explanation": "NOW generated a revenue CAGR of 22.4% over the available period. This is considered exceptional long-term revenue growth, resulting in a score of 91.9/100."
+        },
+        "financial_strength": {
+            "score": 100,
+            "explanation": "NOW has an interest coverage ratio of 79.3x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+    }
+}

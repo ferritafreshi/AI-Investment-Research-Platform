@@ -1,0 +1,15 @@
+{
+    "ticker": "GS",
+    "company_name": "The Goldman Sachs Group, Inc.",
+    "overall_score": 50.6,
+    "scores": {
+        "revenue_growth": {
+            "score": 50.6,
+            "explanation": "GS generated a revenue CAGR of 7.2% over the available period. This is considered healthy long-term revenue growth, resulting in a score of 50.6/100."
+        },
+        "financial_strength": {
+            "score": null,
+            "explanation": "Interest coverage could not be calculated because interest expense data was unavailable."
+        }
+    }
+}

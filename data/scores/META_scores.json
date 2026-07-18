@@ -1,0 +1,15 @@
+{
+    "ticker": "META",
+    "company_name": "Meta Platforms, Inc.",
+    "overall_score": 94.8,
+    "scores": {
+        "revenue_growth": {
+            "score": 89.7,
+            "explanation": "META generated a revenue CAGR of 19.9% over the available period. This is considered strong long-term revenue growth, resulting in a score of 89.7/100."
+        },
+        "financial_strength": {
+            "score": 100,
+            "explanation": "META has an interest coverage ratio of 71.5x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+    }
+}

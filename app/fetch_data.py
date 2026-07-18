@@ -1,84 +1,91 @@
-# Import the yfinance library so we can download company financial data.
 import yfinance as yf
-import json
 import os
+import json
+from pathlib import Path
 
-# Create a function that accepts a stock ticker (for example: "MSFT").
+# Find the project root (one level above the app folder)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+WATCHLIST_FILE = PROJECT_ROOT / "data" / "watchlist.json"
+EXCLUDED_SECTORS = ["airlines", "banking", "insurance"]
+EXCLUDED_INDUSTRIES = ["airline", "department store", "regional bank", "insurance"]
+
+def is_excluded(company_info):
+    sector = str(company_info.get("sector", "")).lower()
+    industry = str(company_info.get("industry", "")).lower()
+    for excluded in EXCLUDED_INDUSTRIES:
+        if excluded in industry:
+            print(f"Excluding (Industry: {company_info.get('industry', 'Unknown')})")
+            return True
+    for excluded in EXCLUDED_SECTORS:
+        if excluded in sector:
+            print(f"Excluding (Sector: {company_info.get('sector', 'Unknown')})")
+            return True
+    return False
+
 def get_company_snapshot(ticker):
-
-    # Use a try block so the program doesn't crash if something goes wrong.
     try:
-
-        # Connect to Yahoo Finance and create a company object.
         company = yf.Ticker(ticker)
-
-        # Download the company's general information.
         info = company.info
-
-        # Download the company's cash flow statement.
         cashflow = company.cashflow
-
-        # Start by assuming we don't know the free cash flow.
         free_cash_flow = None
-
-        # Check that the cash flow table actually contains data.
         if not cashflow.empty:
-
-            # Look for the Operating Cash Flow row.
             operating_cash_flow = cashflow.loc["Operating Cash Flow"].iloc[0] \
                 if "Operating Cash Flow" in cashflow.index else None
-
-            # Look for the Capital Expenditure row.
             capital_expenditures = cashflow.loc["Capital Expenditure"].iloc[0] \
                 if "Capital Expenditure" in cashflow.index else None
-
-            # If both values exist, calculate Free Cash Flow.
             if operating_cash_flow is not None and capital_expenditures is not None:
-
-                # Capital Expenditures are usually negative, so adding them
-                # is the same as subtracting the absolute amount.
                 free_cash_flow = operating_cash_flow + capital_expenditures
-
-        # Create a dictionary containing the information we want.
-        snapshot = {
+        return {
             "ticker": ticker.upper(),
             "company_name": info.get("longName"),
             "sector": info.get("sector"),
+            "industry": info.get("industry"),
             "market_cap": info.get("marketCap"),
             "trailing_eps": info.get("trailingEps"),
             "free_cash_flow": free_cash_flow
         }
-
-        # Return the completed dictionary.
-        return snapshot
-
-    # If anything goes wrong, catch the error instead of crashing.
     except Exception as error:
-
-        # Print a warning message explaining which ticker failed.
         print(f"Warning: Could not retrieve data for '{ticker}'. {error}")
-
-        # Return nothing because the request failed.
         return None
 
+def load_watchlist():
+    if not os.path.exists(WATCHLIST_FILE):
+        print(f"Warning: '{WATCHLIST_FILE}' was not found.")
+        return []
+    try:
+        with open(WATCHLIST_FILE, "r", encoding="utf-8") as file:
+            data = json.load(file)
+        return [entry["ticker"] for entry in data.get("watchlist", [])]
+    except Exception as error:
+        print(f"Warning: Unable to read watchlist.json ({error})")
+        return []
 
-# This code only runs when we execute this file directly.
 if __name__ == "__main__":
-
-    # Make sure the data/raw folder exists before saving anything.
     os.makedirs("data/raw", exist_ok=True)
-
-    # List of tickers we want to test.
-    tickers = ["MSFT", "NVDA", "COST"]
-
-    # Loop through each ticker, fetch its snapshot, print it, and save it.
+    tickers = load_watchlist()
+    success_count = 0
+    failure_count = 0
+    excluded_count = 0
     for ticker in tickers:
-        result = get_company_snapshot(ticker)
-        print(result)
-
-        # Only save if we actually got data back.
-        if result is not None:
-            file_path = f"data/raw/{ticker}.json"
-            with open(file_path, "w") as file:
-                json.dump(result, file, indent=4)
-            print(f"Saved {ticker} data to {file_path}")
+        print(f"\nProcessing {ticker}...")
+        snapshot = get_company_snapshot(ticker)
+        if snapshot is None:
+            failure_count += 1
+            continue
+        if is_excluded(snapshot):
+            excluded_count += 1
+            continue
+        file_path = f"data/raw/{ticker.upper()}.json"
+        with open(file_path, "w", encoding="utf-8") as file:
+            json.dump(snapshot, file, indent=4)
+        print(f"Saved {ticker} to {file_path}")
+        success_count += 1
+    print("\n" + "=" * 50)
+    print("DATA DOWNLOAD SUMMARY")
+    print("=" * 50)
+    print(f"Total tickers : {len(tickers)}")
+    print(f"Successful    : {success_count}")
+    print(f"Excluded      : {excluded_count}")
+    print(f"Failed        : {failure_count}")
+    print("=" * 50)

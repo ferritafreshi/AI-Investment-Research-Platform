@@ -1,0 +1,15 @@
+{
+    "ticker": "ASML",
+    "company_name": "ASML Holding N.V.",
+    "overall_score": 89.4,
+    "scores": {
+        "revenue_growth": {
+            "score": 78.9,
+            "explanation": "ASML generated a revenue CAGR of 15.6% over the available period. This is considered strong long-term revenue growth, resulting in a score of 78.9/100."
+        },
+        "financial_strength": {
+            "score": 100,
+            "explanation": "ASML has an interest coverage ratio of 95.5x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+  "watchlist": [
+    { "ticker": "MSFT", "name": "Microsoft", "reason": "Cloud, AI, enterprise software dominance" },
+    { "ticker": "NVDA", "name": "NVIDIA", "reason": "AI chip monopoly, data center growth" },
+    { "ticker": "COST", "name": "Costco", "reason": "Membership moat, consistent comps growth" },
+    { "ticker": "AAPL", "name": "Apple", "reason": "Ecosystem lock-in, services growth" },
+    { "ticker": "GOOGL", "name": "Alphabet", "reason": "Search monopoly, cloud, AI infrastructure" },
+    { "ticker": "META", "name": "Meta Platforms", "reason": "Social network moat, AI-driven ad recovery" },
+    { "ticker": "AMZN", "name": "Amazon", "reason": "AWS dominance, logistics moat" },
+    { "ticker": "V", "name": "Visa", "reason": "Payment network effects, asset-light model" },
+    { "ticker": "GS", "name": "Visa", "reason": "Payment network effects, asset-light model" },
+    { "ticker": "INTU", "name": "Intuit", "reason": "Tax and SMB software moat, recurring revenue" },
+    { "ticker": "ADBE", "name": "Adobe", "reason": "Creative software monopoly, subscription model" },
+    { "ticker": "MA", "name": "Mastercard", "reason": "Duopoly with Visa, global payment network" },
+    { "ticker": "LLY", "name": "Eli Lilly", "reason": "GLP-1 drug pipeline, secular obesity trend" },
+    { "ticker": "ASML", "name": "ASML", "reason": "Monopoly on EUV lithography machines" },
+    { "ticker": "NOW", "name": "ServiceNow", "reason": "Enterprise workflow automation, AI integration" },
+    { "ticker": "PANW", "name": "Palo Alto Networks", "reason": "Cybersecurity platform consolidation" },
+    { "ticker": "CRWD", "name": "CrowdStrike", "reason": "Cloud-native endpoint security leader" },
+    { "ticker": "SPOT", "name": "Spotify", "reason": "Audio streaming moat, podcast expansion — speculative" },
+    { "ticker": "TSLA", "name": "Tesla", "reason": "EV and energy storage — speculative, high risk" }
+  ],
+  "excluded_sectors": [
+    "Airlines",
+    "Department Stores",
+    "Traditional Banking",
+    "Broad Insurance",
+    "Highly Cyclical"
+  ]
+}

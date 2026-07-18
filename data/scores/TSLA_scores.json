@@ -1,0 +1,15 @@
+{
+    "ticker": "TSLA",
+    "company_name": "Tesla, Inc.",
+    "overall_score": 65.5,
+    "scores": {
+        "revenue_growth": {
+            "score": 41.0,
+            "explanation": "TSLA generated a revenue CAGR of 5.2% over the available period. This is considered modest long-term revenue growth, resulting in a score of 41.0/100."
+        },
+        "financial_strength": {
+            "score": 90,
+            "explanation": "TSLA has an interest coverage ratio of 14.3x. The company has strong ability to service its debt. Positive free cash flow increased the score."
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "ticker": "AMZN",
+    "company_name": "Amazon.com, Inc.",
+    "overall_score": 84.4,
+    "scores": {
+        "revenue_growth": {
+            "score": 68.9,
+            "explanation": "AMZN generated a revenue CAGR of 11.7% over the available period. This is considered healthy long-term revenue growth, resulting in a score of 68.9/100."
+        },
+        "financial_strength": {
+            "score": 100,
+            "explanation": "AMZN has an interest coverage ratio of 35.2x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+    }
+}

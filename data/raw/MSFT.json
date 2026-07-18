@@ -2,7 +2,8 @@
     "ticker": "MSFT",
     "company_name": "Microsoft Corporation",
     "sector": "Technology",
-    "market_cap": 2860690440192,
-    "trailing_eps": 16.79,
+    "industry": "Software - Infrastructure",
+    "market_cap": 2925466222592,
+    "trailing_eps": 16.81,
     "free_cash_flow": 71611000000.0
 }

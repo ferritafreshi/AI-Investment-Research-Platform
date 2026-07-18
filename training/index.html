@@ -74,7 +74,7 @@
       list.forEach(function(m) {
         var div = document.createElement('div');
         div.className = 'milestone';
-        div.innerHTML = 'Week ' + m.week + ': ' + m.title + ' — <span class="' + m.status + '">' + m.status.replace('_', ' ') + '</span>';
+        div.innerHTML = '<strong>Week ' + m.week + ': ' + m.title + '</strong> — <span class="' + m.status + '">' + m.status.replace('_', ' ') + '</span><br><small style="color:#94a3b8;">' + m.description + '</small>';
         container.appendChild(div);
       });
     })
