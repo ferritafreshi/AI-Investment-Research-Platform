@@ -3,7 +3,9 @@
     "company_name": "Apple Inc.",
     "sector": "Technology",
     "industry": "Consumer Electronics",
-    "market_cap": 4901757779968,
-    "trailing_eps": 8.26,
+    "market_cap": 4813633880064,
+    "trailing_eps": 8.29,
+    "pe_ratio": 39.534378,
+    "revenue": 451442016256,
     "free_cash_flow": 98767000000.0
 }

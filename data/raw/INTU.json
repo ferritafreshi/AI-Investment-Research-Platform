@@ -3,7 +3,9 @@
     "company_name": "Intuit Inc.",
     "sector": "Technology",
     "industry": "Software - Application",
-    "market_cap": 79623880704,
-    "trailing_eps": 16.39,
+    "market_cap": 79303852032,
+    "trailing_eps": 16.18,
+    "pe_ratio": 17.918419,
+    "revenue": 20924999680,
     "free_cash_flow": 6083000000.0
 }

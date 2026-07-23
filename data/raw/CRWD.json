@@ -3,7 +3,9 @@
     "company_name": "CrowdStrike Holdings, Inc.",
     "sector": "Technology",
     "industry": "Software - Infrastructure",
-    "market_cap": 206788100096,
-    "trailing_eps": -0.02,
+    "market_cap": 194640248832,
+    "trailing_eps": -0.04,
+    "pe_ratio": null,
+    "revenue": 5094199808,
     "free_cash_flow": 1241490000.0
 }

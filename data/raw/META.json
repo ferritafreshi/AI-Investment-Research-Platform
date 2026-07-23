@@ -3,7 +3,9 @@
     "company_name": "Meta Platforms, Inc.",
     "sector": "Communication Services",
     "industry": "Internet Content & Information",
-    "market_cap": 1639846903808,
-    "trailing_eps": 27.51,
+    "market_cap": 1634262319104,
+    "trailing_eps": 27.43,
+    "pe_ratio": 23.471016,
+    "revenue": 214962995200,
     "free_cash_flow": 46109000000.0
 }

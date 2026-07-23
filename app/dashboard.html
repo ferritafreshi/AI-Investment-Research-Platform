@@ -1,40 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Investment Research Platform</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Investment Research Platform</title>
+  <link rel="stylesheet" href="/app/style.css">
 </head>
 <body>
 
-<header>
-  <h1>AI Investment Research Platform</h1>
-  <p>Long-Term Growth Stock Research Dashboard</p>
-</header>
+  <header class="header">
+    <div>
+      <h1>AI Investment Research Platform</h1>
+      <div class="subtitle">Long-Term Growth Stock Research Dashboard</div>
+    </div>
+    <div id="last-updated" class="last-updated"></div>
+  </header>
 
-<main>
-  <div class="summary-grid">
-    <div class="summary-card">
-      <h3>Companies</h3>
-      <p id="total-companies">--</p>
+  <main class="container">
+
+    <div id="error-message"></div>
+    <div id="loading">Loading dashboard data...</div>
+
+    <!-- Summary Cards -->
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="label">Companies</div>
+        <div class="value" id="stat-companies">-</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">Average Score</div>
+        <div class="value" id="stat-avg-score">-</div>
+      </div>
+      <div class="summary-card">
+        <div class="label">Top Company</div>
+        <div class="sub" id="stat-top-company">-</div>
+      </div>
     </div>
-    <div class="summary-card">
-      <h3>Average Score</h3>
-      <p id="avg-score">--</p>
+
+    <!-- Company Rankings Table -->
+    <div class="section-title">Company Rankings</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Company</th>
+            <th>Overall Score</th>
+            <th>Sub-Scores &amp; Analysis</th>
+          </tr>
+        </thead>
+        <tbody id="company-tbody">
+        </tbody>
+      </table>
     </div>
-    <div class="summary-card">
-      <h3>Top Company</h3>
-      <p id="top-company">--</p>
+
+  </main>
+
+  <!-- SEC Filing Modal -->
+  <div id="sec-modal" class="modal-overlay">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h2 id="modal-title"></h2>
+        <button class="modal-close" onclick="closeSecModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p id="modal-date" class="modal-date"></p>
+
+        <!-- Key Financials -->
+        <div class="modal-financials">
+          <div class="modal-financial-item">
+            <span class="fin-label">EPS</span>
+            <span class="fin-value" id="modal-eps">-</span>
+          </div>
+          <div class="modal-financial-item">
+            <span class="fin-label">P/E Ratio</span>
+            <span class="fin-value" id="modal-pe">-</span>
+          </div>
+          <div class="modal-financial-item">
+            <span class="fin-label">Revenue</span>
+            <span class="fin-value" id="modal-revenue">-</span>
+          </div>
+        </div>
+
+        <a id="modal-link" href="#" target="_blank" class="modal-filing-link">
+          📄 Open Full SEC Filing (10-K)
+        </a>
+      </div>
     </div>
   </div>
-  <div id="company-grid"></div>
-</main>
 
-<footer>
-  AI Investment Research Platform — For personal research only. Not financial advice.
-</footer>
-
-<script src="dashboard.js"></script>
+  <script src="dashboard.js"></script>
 </body>
 </html>

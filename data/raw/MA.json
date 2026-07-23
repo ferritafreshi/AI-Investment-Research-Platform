@@ -3,7 +3,9 @@
     "company_name": "Mastercard Incorporated",
     "sector": "Financial Services",
     "industry": "Credit Services",
-    "market_cap": 480316162048,
-    "trailing_eps": 17.26,
+    "market_cap": 475633188864,
+    "trailing_eps": 17.01,
+    "pe_ratio": 31.64609,
+    "revenue": 33938999296,
     "free_cash_flow": 16433000000.0
 }

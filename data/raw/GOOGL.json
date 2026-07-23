@@ -3,7 +3,9 @@
     "company_name": "Alphabet Inc.",
     "sector": "Communication Services",
     "industry": "Internet Content & Information",
-    "market_cap": 4231485980672,
-    "trailing_eps": 13.12,
+    "market_cap": 4236123045888,
+    "trailing_eps": 12.91,
+    "pe_ratio": 26.890007,
+    "revenue": 422498009088,
     "free_cash_flow": 73266000000.0
 }

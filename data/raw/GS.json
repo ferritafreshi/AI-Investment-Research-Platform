@@ -3,7 +3,9 @@
     "company_name": "The Goldman Sachs Group, Inc.",
     "sector": "Financial Services",
     "industry": "Capital Markets",
-    "market_cap": 314247806976,
-    "trailing_eps": 64.74,
+    "market_cap": 320248283136,
+    "trailing_eps": 66.65,
+    "pe_ratio": 16.287472,
+    "revenue": 67569999872,
     "free_cash_flow": -47218000000.0
 }

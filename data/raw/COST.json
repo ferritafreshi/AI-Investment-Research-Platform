@@ -3,7 +3,9 @@
     "company_name": "Costco Wholesale Corporation",
     "sector": "Consumer Defensive",
     "industry": "Discount Stores",
-    "market_cap": 417255915520,
-    "trailing_eps": 19.86,
+    "market_cap": 412089384960,
+    "trailing_eps": 19.7,
+    "pe_ratio": 47.168526,
+    "revenue": 293586993152,
     "free_cash_flow": 7837000000.0
 }

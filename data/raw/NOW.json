@@ -3,7 +3,9 @@
     "company_name": "ServiceNow, Inc.",
     "sector": "Technology",
     "industry": "Software - Application",
-    "market_cap": 106472235008,
-    "trailing_eps": 1.68,
+    "market_cap": 105255297024,
+    "trailing_eps": 1.63,
+    "pe_ratio": 62.613495,
+    "revenue": 13959999488,
     "free_cash_flow": 4533000000.0
 }
