@@ -1,10 +1,10 @@
 {
-  "current_week": 5,
+  "current_week": 6,
   "total_weeks": 12,
-  "current_lesson": "Week 5: Expand Company Universe",
-  "project_completion_percent": 42,
-  "learning_progress_percent": 42,
-  "github_progress_percent": 42,
+  "current_lesson": "Week 6: SEC Filings & AI Summaries",
+  "project_completion_percent": 50,
+  "learning_progress_percent": 50,
+  "github_progress_percent": 50,
   "completed_milestones": [
     "Week 1: Installed Python, GitHub Desktop, VS Code",
     "Week 1: Created and published GitHub repository",
@@ -21,8 +21,11 @@
     "Week 5: Created data/watchlist.json with 19 growth stock tickers",
     "Week 5: Updated fetch_data.py and scoring.py to load tickers from watchlist.json",
     "Week 5: Scored all 19 companies and confirmed dashboard displays full universe"
+    "Week 6: Fetched SEC 10-K filings for all 19 companies via SEC EDGAR",
+    "Week 6: Added EPS, P/E Ratio, and Revenue to dashboard popup modal",
+    "Week 6: Confirmed SEC Filing button works for all 19 companies"
   ],
   "current_blockers": [],
-  "recommended_next_task": "Start Week 6: SEC Filings & AI Summaries",
+  "recommended_next_task": "Start Week 7: News & Company Comparison",
   "estimated_time_remaining_hours": 63
 }
