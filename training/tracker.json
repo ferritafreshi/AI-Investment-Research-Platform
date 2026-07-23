@@ -20,7 +20,7 @@
     "Week 4: Dashboard loads and displays company scores in the browser",
     "Week 5: Created data/watchlist.json with 19 growth stock tickers",
     "Week 5: Updated fetch_data.py and scoring.py to load tickers from watchlist.json",
-    "Week 5: Scored all 19 companies and confirmed dashboard displays full universe"
+    "Week 5: Scored all 19 companies and confirmed dashboard displays full universe",
     "Week 6: Fetched SEC 10-K filings for all 19 companies via SEC EDGAR",
     "Week 6: Added EPS, P/E Ratio, and Revenue to dashboard popup modal",
     "Week 6: Confirmed SEC Filing button works for all 19 companies"
