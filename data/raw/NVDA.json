@@ -3,7 +3,9 @@
     "company_name": "NVIDIA Corporation",
     "sector": "Technology",
     "industry": "Semiconductors",
-    "market_cap": 4912260841472,
-    "trailing_eps": 6.53,
+    "market_cap": 5020770631680,
+    "trailing_eps": 6.65,
+    "pe_ratio": 31.171427,
+    "revenue": 253491003392,
     "free_cash_flow": 96676000000.0
 }

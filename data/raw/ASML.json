@@ -3,7 +3,9 @@
     "company_name": "ASML Holding N.V.",
     "sector": "Technology",
     "industry": "Semiconductor Equipment & Materials",
-    "market_cap": 671245467648,
-    "trailing_eps": 31.41,
+    "market_cap": 691960020992,
+    "trailing_eps": 29.91,
+    "pe_ratio": 60.231026,
+    "revenue": 35327500288,
     "free_cash_flow": 11027300000.0
 }

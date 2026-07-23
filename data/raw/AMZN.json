@@ -3,7 +3,9 @@
     "company_name": "Amazon.com, Inc.",
     "sector": "Consumer Cyclical",
     "industry": "Internet Retail",
-    "market_cap": 2659480240128,
-    "trailing_eps": 8.37,
+    "market_cap": 2662922452992,
+    "trailing_eps": 8.27,
+    "pe_ratio": 29.933493,
+    "revenue": 742775980032,
     "free_cash_flow": 7695000000.0
 }

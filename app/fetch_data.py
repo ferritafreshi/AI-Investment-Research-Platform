@@ -43,6 +43,8 @@ def get_company_snapshot(ticker):
             "industry": info.get("industry"),
             "market_cap": info.get("marketCap"),
             "trailing_eps": info.get("trailingEps"),
+            "pe_ratio": info.get("trailingPE"),
+            "revenue": info.get("totalRevenue"),
             "free_cash_flow": free_cash_flow
         }
     except Exception as error:

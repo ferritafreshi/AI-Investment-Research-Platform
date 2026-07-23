@@ -3,7 +3,9 @@
     "company_name": "Microsoft Corporation",
     "sector": "Technology",
     "industry": "Software - Infrastructure",
-    "market_cap": 2925466222592,
-    "trailing_eps": 16.81,
+    "market_cap": 2954659889152,
+    "trailing_eps": 16.78,
+    "pe_ratio": 23.703814,
+    "revenue": 318272995328,
     "free_cash_flow": 71611000000.0
 }

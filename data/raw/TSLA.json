@@ -3,7 +3,9 @@
     "company_name": "Tesla, Inc.",
     "sector": "Consumer Cyclical",
     "industry": "Auto Manufacturers",
-    "market_cap": 1430329884672,
-    "trailing_eps": 1.09,
+    "market_cap": 1423156445184,
+    "trailing_eps": 1.1,
+    "pe_ratio": 344.4818,
+    "revenue": 97878999040,
     "free_cash_flow": 6220000000.0
 }

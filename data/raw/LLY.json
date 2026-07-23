@@ -3,7 +3,9 @@
     "company_name": "Eli Lilly and Company",
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - General",
-    "market_cap": 1051461156864,
-    "trailing_eps": 28.18,
+    "market_cap": 1048161746944,
+    "trailing_eps": 28.8,
+    "pe_ratio": 40.81285,
+    "revenue": 72248999936,
     "free_cash_flow": 5964000000.0
 }

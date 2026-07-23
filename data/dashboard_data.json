@@ -1,0 +1,506 @@
+{
+  "generated_at": "2026-07-21T21:54:38.351075",
+  "total_companies": 19,
+  "average_score": 83.0,
+  "top_company": {
+    "ticker": "NVDA",
+    "company_name": "NVIDIA Corporation",
+    "overall_score": 100.0
+  },
+  "companies": [
+    {
+      "ticker": "NVDA",
+      "company_name": "NVIDIA Corporation",
+      "overall_score": 100.0,
+      "scores": {
+        "revenue_growth": {
+          "score": 100,
+          "explanation": "NVDA generated a revenue CAGR of 100.0% over the available period. This is considered exceptional long-term revenue growth, resulting in a score of 100/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "NVDA has an interest coverage ratio of 503.4x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-02-25",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm",
+        "financials": {
+          "eps": 6.65,
+          "market_cap": 5020770631680,
+          "revenue": 253491003392,
+          "pe_ratio": 31.171427
+        }
+      }
+    },
+    {
+      "ticker": "LLY",
+      "company_name": "Eli Lilly and Company",
+      "overall_score": 100.0,
+      "scores": {
+        "revenue_growth": {
+          "score": 100,
+          "explanation": "LLY generated a revenue CAGR of 31.7% over the available period. This is considered exceptional long-term revenue growth, resulting in a score of 100/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "LLY has an interest coverage ratio of 38.0x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-02-12",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000013/lly-20251231.htm",
+        "financials": {
+          "eps": 28.8,
+          "market_cap": 1048161746944,
+          "revenue": 72248999936,
+          "pe_ratio": 40.81285
+        }
+      }
+    },
+    {
+      "ticker": "NOW",
+      "company_name": "ServiceNow, Inc.",
+      "overall_score": 96.0,
+      "scores": {
+        "revenue_growth": {
+          "score": 91.9,
+          "explanation": "NOW generated a revenue CAGR of 22.4% over the available period. This is considered exceptional long-term revenue growth, resulting in a score of 91.9/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "NOW has an interest coverage ratio of 79.3x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-01-29",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1373715/000137371526000007/now-20251231.htm",
+        "financials": {
+          "eps": 1.63,
+          "market_cap": 105255297024,
+          "revenue": 13959999488,
+          "pe_ratio": 62.613495
+        }
+      }
+    },
+    {
+      "ticker": "META",
+      "company_name": "Meta Platforms, Inc.",
+      "overall_score": 94.8,
+      "scores": {
+        "revenue_growth": {
+          "score": 89.7,
+          "explanation": "META generated a revenue CAGR of 19.9% over the available period. This is considered strong long-term revenue growth, resulting in a score of 89.7/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "META has an interest coverage ratio of 71.5x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-01-29",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm",
+        "financials": {
+          "eps": 27.43,
+          "market_cap": 1634262319104,
+          "revenue": 214962995200,
+          "pe_ratio": 23.471016
+        }
+      }
+    },
+    {
+      "ticker": "PANW",
+      "company_name": "Palo Alto Networks, Inc.",
+      "overall_score": 93.5,
+      "scores": {
+        "revenue_growth": {
+          "score": 87.0,
+          "explanation": "PANW generated a revenue CAGR of 18.8% over the available period. This is considered strong long-term revenue growth, resulting in a score of 87.0/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "PANW has an interest coverage ratio of 654.2x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2025-08-29",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1327567/000132756725000027/panw-20250731.htm",
+        "financials": {
+          "eps": 1.13,
+          "market_cap": 278852239360,
+          "revenue": 10606499840,
+          "pe_ratio": 302.7876
+        }
+      }
+    },
+    {
+      "ticker": "ASML",
+      "company_name": "ASML Holding N.V.",
+      "overall_score": 89.4,
+      "scores": {
+        "revenue_growth": {
+          "score": 78.9,
+          "explanation": "ASML generated a revenue CAGR of 15.6% over the available period. This is considered strong long-term revenue growth, resulting in a score of 78.9/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "ASML has an interest coverage ratio of 95.5x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": null,
+        "filing_date": null,
+        "filing_url": null,
+        "financials": {
+          "eps": 29.91,
+          "market_cap": 691960020992,
+          "revenue": 35327500288,
+          "pe_ratio": 60.231026
+        }
+      }
+    },
+    {
+      "ticker": "INTU",
+      "company_name": "Intuit Inc.",
+      "overall_score": 87.4,
+      "scores": {
+        "revenue_growth": {
+          "score": 74.9,
+          "explanation": "INTU generated a revenue CAGR of 14.0% over the available period. This is considered strong long-term revenue growth, resulting in a score of 74.9/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "INTU has an interest coverage ratio of 20.0x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2025-09-03",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/896878/000089687825000035/intu-20250731.htm",
+        "financials": {
+          "eps": 16.18,
+          "market_cap": 79303852032,
+          "revenue": 20924999680,
+          "pe_ratio": 17.918419
+        }
+      }
+    },
+    {
+      "ticker": "MA",
+      "company_name": "Mastercard Incorporated",
+      "overall_score": 87.3,
+      "scores": {
+        "revenue_growth": {
+          "score": 74.6,
+          "explanation": "MA generated a revenue CAGR of 13.8% over the available period. This is considered strong long-term revenue growth, resulting in a score of 74.6/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "MA has an interest coverage ratio of 27.0x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-02-11",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139126000013/ma-20251231.htm",
+        "financials": {
+          "eps": 17.01,
+          "market_cap": 475633188864,
+          "revenue": 33938999296,
+          "pe_ratio": 31.64609
+        }
+      }
+    },
+    {
+      "ticker": "SPOT",
+      "company_name": "Spotify Technology S.A.",
+      "overall_score": 87.0,
+      "scores": {
+        "revenue_growth": {
+          "score": 74.0,
+          "explanation": "SPOT generated a revenue CAGR of 13.6% over the available period. This is considered strong long-term revenue growth, resulting in a score of 74.0/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "SPOT has an interest coverage ratio of 70.9x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": null,
+        "filing_date": null,
+        "filing_url": null,
+        "financials": {
+          "eps": 14.7,
+          "market_cap": 101417984000,
+          "revenue": 17528999936,
+          "pe_ratio": 33.553062
+        }
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "company_name": "Microsoft Corporation",
+      "overall_score": 85.6,
+      "scores": {
+        "revenue_growth": {
+          "score": 71.1,
+          "explanation": "MSFT generated a revenue CAGR of 12.4% over the available period. This is considered strong long-term revenue growth, resulting in a score of 71.1/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "MSFT has an interest coverage ratio of 53.9x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2025-07-30",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000095017025100235/msft-20250630.htm",
+        "financials": {
+          "eps": 16.78,
+          "market_cap": 2954659889152,
+          "revenue": 318272995328,
+          "pe_ratio": 23.703814
+        }
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "company_name": "Alphabet Inc.",
+      "overall_score": 85.6,
+      "scores": {
+        "revenue_growth": {
+          "score": 71.3,
+          "explanation": "GOOGL generated a revenue CAGR of 12.5% over the available period. This is considered strong long-term revenue growth, resulting in a score of 71.3/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "GOOGL has an interest coverage ratio of 175.3x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-02-05",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000018/goog-20251231.htm",
+        "financials": {
+          "eps": 12.91,
+          "market_cap": 4236123045888,
+          "revenue": 422498009088,
+          "pe_ratio": 26.890007
+        }
+      }
+    },
+    {
+      "ticker": "AMZN",
+      "company_name": "Amazon.com, Inc.",
+      "overall_score": 84.4,
+      "scores": {
+        "revenue_growth": {
+          "score": 68.9,
+          "explanation": "AMZN generated a revenue CAGR of 11.7% over the available period. This is considered healthy long-term revenue growth, resulting in a score of 68.9/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "AMZN has an interest coverage ratio of 35.2x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-02-06",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+        "financials": {
+          "eps": 8.27,
+          "market_cap": 2662922452992,
+          "revenue": 742775980032,
+          "pe_ratio": 29.933493
+        }
+      }
+    },
+    {
+      "ticker": "V",
+      "company_name": "Visa Inc.",
+      "overall_score": 82.8,
+      "scores": {
+        "revenue_growth": {
+          "score": 65.7,
+          "explanation": "V generated a revenue CAGR of 10.9% over the available period. This is considered healthy long-term revenue growth, resulting in a score of 65.7/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "V has an interest coverage ratio of 45.1x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2025-11-06",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm",
+        "financials": {
+          "eps": 11.32,
+          "market_cap": 676678467584,
+          "revenue": 43027001344,
+          "pe_ratio": 31.432863
+        }
+      }
+    },
+    {
+      "ticker": "ADBE",
+      "company_name": "Adobe Inc.",
+      "overall_score": 82.0,
+      "scores": {
+        "revenue_growth": {
+          "score": 64.1,
+          "explanation": "ADBE generated a revenue CAGR of 10.5% over the available period. This is considered healthy long-term revenue growth, resulting in a score of 64.1/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "ADBE has an interest coverage ratio of 33.1x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-01-15",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+        "financials": {
+          "eps": 16.92,
+          "market_cap": 90296098816,
+          "revenue": 25198000128,
+          "pe_ratio": 13.425532
+        }
+      }
+    },
+    {
+      "ticker": "COST",
+      "company_name": "Costco Wholesale Corporation",
+      "overall_score": 74.1,
+      "scores": {
+        "revenue_growth": {
+          "score": 48.2,
+          "explanation": "COST generated a revenue CAGR of 6.6% over the available period. This is considered modest long-term revenue growth, resulting in a score of 48.2/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "COST has an interest coverage ratio of 67.4x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2025-10-08",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm",
+        "financials": {
+          "eps": 19.7,
+          "market_cap": 412089384960,
+          "revenue": 293586993152,
+          "pe_ratio": 47.168526
+        }
+      }
+    },
+    {
+      "ticker": "CRWD",
+      "company_name": "CrowdStrike Holdings, Inc.",
+      "overall_score": 67.1,
+      "scores": {
+        "revenue_growth": {
+          "score": 97.2,
+          "explanation": "CRWD generated a revenue CAGR of 29.0% over the available period. This is considered exceptional long-term revenue growth, resulting in a score of 97.2/100."
+        },
+        "financial_strength": {
+          "score": 37,
+          "explanation": "CRWD has an interest coverage ratio of -10.5x. The company's interest coverage is relatively weak, which increases financial risk. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-03-05",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000010/crwd-20260131.htm",
+        "financials": {
+          "eps": -0.04,
+          "market_cap": 194640248832,
+          "revenue": 5094199808,
+          "pe_ratio": null
+        }
+      }
+    },
+    {
+      "ticker": "TSLA",
+      "company_name": "Tesla, Inc.",
+      "overall_score": 65.5,
+      "scores": {
+        "revenue_growth": {
+          "score": 41.0,
+          "explanation": "TSLA generated a revenue CAGR of 5.2% over the available period. This is considered modest long-term revenue growth, resulting in a score of 41.0/100."
+        },
+        "financial_strength": {
+          "score": 90,
+          "explanation": "TSLA has an interest coverage ratio of 14.3x. The company has strong ability to service its debt. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-01-29",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+        "financials": {
+          "eps": 1.1,
+          "market_cap": 1423156445184,
+          "revenue": 97878999040,
+          "pe_ratio": 344.4818
+        }
+      }
+    },
+    {
+      "ticker": "AAPL",
+      "company_name": "Apple Inc.",
+      "overall_score": 63.0,
+      "scores": {
+        "revenue_growth": {
+          "score": 26.0,
+          "explanation": "AAPL generated a revenue CAGR of 1.8% over the available period. This is considered weak long-term revenue growth, resulting in a score of 26.0/100."
+        },
+        "financial_strength": {
+          "score": 100,
+          "explanation": "AAPL has an interest coverage ratio of 33.8x. The company easily covers its interest obligations, indicating excellent financial strength. Positive free cash flow increased the score."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2025-10-31",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm",
+        "financials": {
+          "eps": 8.29,
+          "market_cap": 4813633880064,
+          "revenue": 451442016256,
+          "pe_ratio": 39.534378
+        }
+      }
+    },
+    {
+      "ticker": "GS",
+      "company_name": "The Goldman Sachs Group, Inc.",
+      "overall_score": 50.6,
+      "scores": {
+        "revenue_growth": {
+          "score": 50.6,
+          "explanation": "GS generated a revenue CAGR of 7.2% over the available period. This is considered healthy long-term revenue growth, resulting in a score of 50.6/100."
+        },
+        "financial_strength": {
+          "score": null,
+          "explanation": "Interest coverage could not be calculated because interest expense data was unavailable."
+        }
+      },
+      "sec_filing": {
+        "form": "10-K",
+        "filing_date": "2026-02-25",
+        "filing_url": "https://www.sec.gov/Archives/edgar/data/886982/000088698226000091/gs-20251231.htm",
+        "financials": {
+          "eps": 66.65,
+          "market_cap": 320248283136,
+          "revenue": 67569999872,
+          "pe_ratio": 16.287472
+        }
+      }
+    }
+  ]
+}

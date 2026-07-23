@@ -1,103 +1,145 @@
-fetch('dashboard_data.json?nocache=' + Date.now())
-  .then(function(response) { return response.json(); })
-  .then(function(companies) {
+const DATA_URL = '../data/dashboard_data.json';
+let allCompanies = [];
 
-    document.getElementById('total-companies').textContent = companies.length;
-    var total = companies.reduce(function(sum, c) { return sum + (c.overall_score || 0); }, 0);
-    document.getElementById('avg-score').textContent = (total / companies.length).toFixed(1);
-    document.getElementById('top-company').textContent = companies[0] ? companies[0].company_name : '--';
+document.addEventListener('DOMContentLoaded', () => {
+  loadDashboard();
+});
 
-    var grid = document.getElementById('company-grid');
-
-    companies.forEach(function(c) {
-      var scores = c.scores || {};
-      var rg = scores.revenue_growth || {};
-      var fs = scores.financial_strength || {};
-
-      function badgeClass(score) {
-        if (!score && score !== 0) return 'score-red';
-        if (score >= 70) return 'score-green';
-        if (score >= 40) return 'score-yellow';
-        return 'score-red';
-      }
-
-      var card = document.createElement('div');
-      card.className = 'company-card';
-      card.draggable = true;
-
-      card.innerHTML =
-        '<div class="company-name">' + (c.company_name || c.ticker) + '</div>' +
-        '<div class="ticker">' + c.ticker + '</div>' +
-        '<div class="overall-score">' +
-          '<p>Overall Score</p>' +
-          '<h2>' + (c.overall_score !== null ? c.overall_score : '--') + '</h2>' +
-        '</div>' +
-        '<div class="score-section">' +
-          '<div class="score-row">' +
-            '<span class="score-title">Revenue Growth</span>' +
-            '<span class="score-value ' + badgeClass(rg.score) + '">' + (rg.score !== null && rg.score !== undefined ? rg.score : '--') + '</span>' +
-          '</div>' +
-          '<div class="explanation">' + (rg.explanation || 'No data available.') + '</div>' +
-        '</div>' +
-        '<div class="score-section">' +
-          '<div class="score-row">' +
-            '<span class="score-title">Financial Strength</span>' +
-            '<span class="score-value ' + badgeClass(fs.score) + '">' + (fs.score !== null && fs.score !== undefined ? fs.score : '--') + '</span>' +
-          '</div>' +
-          '<div class="explanation">' + (fs.explanation || 'No data available.') + '</div>' +
-        '</div>';
-
-      grid.appendChild(card);
+function loadDashboard() {
+  fetch(DATA_URL + '?t=' + Date.now())
+    .then(res => {
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return res.json();
+    })
+    .then(data => {
+      document.getElementById('loading').style.display = 'none';
+      allCompanies = data.companies || [];
+      renderSummary(data);
+      renderTable(allCompanies);
+    })
+    .catch(err => {
+      document.getElementById('loading').style.display = 'none';
+      const errEl = document.getElementById('error-message');
+      errEl.style.display = 'block';
+      errEl.textContent = `Failed to load dashboard data: ${err.message}`;
     });
+}
 
-    // Drag and drop
-    var dragSrc = null;
+function renderSummary(data) {
+  document.getElementById('stat-companies').textContent = data.total_companies ?? '-';
+  document.getElementById('stat-avg-score').textContent =
+    data.average_score != null ? data.average_score.toFixed(1) : '-';
 
-    function handleDragStart(e) {
-      dragSrc = this;
-      this.classList.add('dragging');
-      e.dataTransfer.effectAllowed = 'move';
-    }
+  const topEl = document.getElementById('stat-top-company');
+  if (data.top_company) {
+    topEl.innerHTML =
+      `<span class="ticker-badge">${data.top_company.ticker}</span> ` +
+      `${data.top_company.company_name}`;
+  } else {
+    topEl.textContent = '-';
+  }
 
-    function handleDragOver(e) {
-      e.preventDefault();
-      e.dataTransfer.dropEffect = 'move';
-      this.classList.add('drag-over');
-    }
+  const updatedEl = document.getElementById('last-updated');
+  if (data.generated_at) {
+    const d = new Date(data.generated_at);
+    updatedEl.textContent = 'Updated: ' + d.toLocaleString();
+  }
+}
 
-    function handleDragLeave() {
-      this.classList.remove('drag-over');
-    }
+function scoreClass(score) {
+  if (score == null) return '';
+  if (score >= 70) return 'score-high';
+  if (score >= 40) return 'score-mid';
+  return 'score-low';
+}
 
-    function handleDrop(e) {
-      e.preventDefault();
-      this.classList.remove('drag-over');
-      if (dragSrc !== this) {
-        var parent = this.parentNode;
-        var srcNext = dragSrc.nextSibling;
-        var targetNext = this.nextSibling;
-        parent.insertBefore(dragSrc, targetNext);
-        parent.insertBefore(this, srcNext);
-      }
-    }
+function scoreBar(score) {
+  if (score == null) return `<span class="na-badge">N/A</span>`;
+  const cls = scoreClass(score);
+  const pct = Math.min(100, score);
+  return `
+    <div class="score-wrapper ${cls}">
+      <div class="score-bar-bg">
+        <div class="score-bar-fill" style="width: ${pct}%"></div>
+      </div>
+      <span class="score-value">${score}</span>
+    </div>`;
+}
 
-    function handleDragEnd() {
-      this.classList.remove('dragging');
-      document.querySelectorAll('.company-card').forEach(function(c) {
-        c.classList.remove('drag-over');
-      });
-    }
+function renderTable(companies) {
+  const tbody = document.getElementById('company-tbody');
+  tbody.innerHTML = '';
 
-    document.querySelectorAll('.company-card').forEach(function(card) {
-      card.addEventListener('dragstart', handleDragStart);
-      card.addEventListener('dragover', handleDragOver);
-      card.addEventListener('dragleave', handleDragLeave);
-      card.addEventListener('drop', handleDrop);
-      card.addEventListener('dragend', handleDragEnd);
-    });
+  companies.forEach((c, i) => {
+    const revScore = c.scores?.revenue_growth?.score ?? null;
+    const finScore = c.scores?.financial_strength?.score ?? null;
+    const revExp = c.scores?.revenue_growth?.explanation ?? '';
+    const finExp = c.scores?.financial_strength?.explanation ?? '';
 
-  })
-  .catch(function(error) {
-    document.getElementById('company-grid').innerHTML =
-      '<p style="color:#f87171;padding:20px">Error loading data: ' + error + '</p>';
+    const secBtn = c.sec_filing
+    ? `<div style="text-align:center; margin-top:8px;">
+        <button class="sec-btn" onclick="openSecModal(${i})">📄 SEC Filing</button>
+      </div>`
+    : '';
+
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="rank-cell">${i + 1}</td>
+      <td>
+        <span class="ticker-badge">${c.ticker}</span><br>
+        <span class="company-name">${c.company_name || ''}</span>
+        ${secBtn}
+      </td>
+      <td>${scoreBar(c.overall_score)}</td>
+      <td>
+        <div class="sub-scores">
+          <div class="sub-score-item">
+            <div class="sub-label">Revenue Growth</div>
+            ${scoreBar(revScore)}
+            <div class="explanation">${revExp}</div>
+          </div>
+          <div class="sub-score-item">
+            <div class="sub-label">Financial Strength</div>
+            ${scoreBar(finScore)}
+            <div class="explanation">${finExp}</div>
+          </div>
+        </div>
+      </td>`;
+    tbody.appendChild(tr);
   });
+}
+
+function openSecModal(index) {
+  const c = allCompanies[index];
+  console.log('Company:', c);
+  console.log('SEC Filing:', c?.sec_filing);
+  console.log('Financials:', c?.sec_filing?.financials);
+  if (!c || !c.sec_filing) return;
+
+  const filing = c.sec_filing;
+  const fin = filing.financials || {};
+
+  document.getElementById('modal-title').textContent =
+    `${c.company_name} (${c.ticker}) — ${filing.form || '10-K'}`;
+  document.getElementById('modal-date').textContent =
+    `Filing Date: ${filing.filing_date || 'N/A'}`;
+  document.getElementById('modal-link').href = filing.filing_url || '#';
+
+  document.getElementById('modal-eps').textContent =
+    fin.eps != null ? `$${fin.eps.toFixed(2)}` : 'N/A';
+  document.getElementById('modal-pe').textContent =
+    fin.pe_ratio != null ? fin.pe_ratio.toFixed(1) : 'N/A';
+  document.getElementById('modal-revenue').textContent =
+    fin.revenue != null ? `$${(fin.revenue / 1e9).toFixed(1)}B` : 'N/A';
+
+  document.getElementById('sec-modal').style.display = 'flex';
+}
+
+function closeSecModal() {
+  document.getElementById('sec-modal').style.display = 'none';
+}
+
+window.addEventListener('click', (e) => {
+  const modal = document.getElementById('sec-modal');
+  if (e.target === modal) closeSecModal();
+});

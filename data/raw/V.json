@@ -3,7 +3,9 @@
     "company_name": "Visa Inc.",
     "sector": "Financial Services",
     "industry": "Credit Services",
-    "market_cap": 681889234944,
-    "trailing_eps": 11.47,
+    "market_cap": 676678467584,
+    "trailing_eps": 11.32,
+    "pe_ratio": 31.432863,
+    "revenue": 43027001344,
     "free_cash_flow": 21577000000.0
 }
