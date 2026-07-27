@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Investment Research Platform</title>
+  <title>Investment Research Platform</title>
   <link rel="stylesheet" href="/app/style.css">
 </head>
 <body>
 
   <header class="header">
     <div>
-      <h1>AI Investment Research Platform</h1>
+      <h1>Investment Research Platform</h1>
       <div class="subtitle">Long-Term Growth Stock Research Dashboard</div>
     </div>
     <div id="last-updated" class="last-updated"></div>
@@ -47,6 +47,7 @@
             <th>Company</th>
             <th>Overall Score</th>
             <th>Sub-Scores &amp; Analysis</th>
+            <th>Latest News</th>
           </tr>
         </thead>
         <tbody id="company-tbody">
@@ -54,6 +55,14 @@
       </table>
     </div>
 
+    <!-- Comparison Panel -->
+    <div id="compare-panel" class="compare-panel" style="display:none;">
+      <div class="compare-header">
+        <h2>Company Comparison</h2>
+        <button class="modal-close" onclick="clearComparison()">✕</button>
+      </div>
+      <div id="compare-body" class="compare-body"></div>
+    </div>
   </main>
 
   <!-- SEC Filing Modal -->
