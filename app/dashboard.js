@@ -70,42 +70,54 @@ function renderTable(companies) {
   const tbody = document.getElementById('company-tbody');
   tbody.innerHTML = '';
 
-  companies.forEach((c, i) => {
-    const revScore = c.scores?.revenue_growth?.score ?? null;
-    const finScore = c.scores?.financial_strength?.score ?? null;
-    const revExp = c.scores?.revenue_growth?.explanation ?? '';
-    const finExp = c.scores?.financial_strength?.explanation ?? '';
+  companies.forEach(function(c, i) {
+    const revScore = c.scores && c.scores.revenue_growth ? c.scores.revenue_growth.score : null;
+    const finScore = c.scores && c.scores.financial_strength ? c.scores.financial_strength.score : null;
+    const revExp = c.scores && c.scores.revenue_growth ? c.scores.revenue_growth.explanation : '';
+    const finExp = c.scores && c.scores.financial_strength ? c.scores.financial_strength.explanation : '';
 
     const secBtn = c.sec_filing
-    ? `<div style="text-align:center; margin-top:8px;">
-        <button class="sec-btn" onclick="openSecModal(${i})">📄 SEC Filing</button>
-      </div>`
-    : '';
+      ? '<button class="sec-btn" onclick="openSecModal(' + i + ')">SEC Filing</button>'
+      : '';
 
     const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td class="rank-cell">${i + 1}</td>
-      <td>
-        <span class="ticker-badge">${c.ticker}</span><br>
-        <span class="company-name">${c.company_name || ''}</span>
-        ${secBtn}
-      </td>
-      <td>${scoreBar(c.overall_score)}</td>
-      <td>
-        <div class="sub-scores">
-          <div class="sub-score-item">
-            <div class="sub-label">Revenue Growth</div>
-            ${scoreBar(revScore)}
-            <div class="explanation">${revExp}</div>
-          </div>
-          <div class="sub-score-item">
-            <div class="sub-label">Financial Strength</div>
-            ${scoreBar(finScore)}
-            <div class="explanation">${finExp}</div>
-          </div>
-        </div>
-      </td>`;
+
+    tr.innerHTML =
+      '<td class="rank-cell">' + (i + 1) + '</td>' +
+      '<td>' +
+        '<span class="ticker-badge">' + c.ticker + '</span><br>' +
+        '<span class="company-name">' + (c.company_name || '') + '</span>' +
+        '<br><br>' +
+        '<div style="text-align:left;margin-top:4px;">' + secBtn + '</div>' +
+        '<br>' +
+        '<div style="text-align:left;margin-top:4px;">' +
+          '<label class="compare-label">' +
+            '<input type="checkbox" class="compare-check" value="' + i + '" onchange="handleCompare(this)">' +
+            ' Compare' +
+          '</label>' +
+        '</div>' +
+      '</td>' +
+      '<td>' + scoreBar(c.overall_score) + '</td>' +
+      '<td>' +
+        '<div class="sub-scores">' +
+          '<div class="sub-score-item">' +
+            '<div class="sub-label">Revenue Growth</div>' +
+            scoreBar(revScore) +
+            '<div class="explanation">' + revExp + '</div>' +
+          '</div>' +
+          '<div class="sub-score-item">' +
+            '<div class="sub-label">Financial Strength</div>' +
+            scoreBar(finScore) +
+            '<div class="explanation">' + finExp + '</div>' +
+          '</div>' +
+        '</div>' +
+      '</td>' +
+      '<td class="news-cell" id="news-' + c.ticker + '">' +
+        '<span style="color:#4a5568;font-size:12px;">Loading...</span>' +
+      '</td>';
+
     tbody.appendChild(tr);
+    fetchNews(c.ticker, 'news-' + c.ticker);
   });
 }
 
@@ -135,6 +147,40 @@ function openSecModal(index) {
   document.getElementById('sec-modal').style.display = 'flex';
 }
 
+const NEWS_URL = 'http://127.0.0.1:5000/news/';
+
+function fetchNews(ticker, cellId) {
+  const cell = document.getElementById(cellId);
+  if (!cell) return;
+  cell.innerHTML = '<span style="color:#4a5568;font-size:12px;">Loading...</span>';
+
+  fetch('http://127.0.0.1:5000/news/' + ticker)
+    .then(function(res) { return res.json(); })
+    .then(function(articles) {
+      if (!articles || !articles.length) {
+        cell.innerHTML = '<span style="color:#4a5568;font-size:12px;">No news found.</span>';
+        return;
+      }
+      const ul = document.createElement('ul');
+      ul.className = 'news-list';
+      articles.forEach(function(a) {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = a.link;
+        link.target = '_blank';
+        link.className = 'news-link';
+        link.textContent = a.title;
+        li.appendChild(link);
+        ul.appendChild(li);
+      });
+      cell.innerHTML = '';
+      cell.appendChild(ul);
+    })
+    .catch(function() {
+      cell.innerHTML = '<span style="color:#fc8181;font-size:12px;">News unavailable.</span>';
+    });
+}
+
 function closeSecModal() {
   document.getElementById('sec-modal').style.display = 'none';
 }
@@ -143,3 +189,79 @@ window.addEventListener('click', (e) => {
   const modal = document.getElementById('sec-modal');
   if (e.target === modal) closeSecModal();
 });
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeSecModal();
+});
+
+let selectedForCompare = [];
+
+function handleCompare(checkbox) {
+  const index = parseInt(checkbox.value);
+  
+  if (checkbox.checked) {
+    if (selectedForCompare.length >= 2) {
+      checkbox.checked = false;
+      alert('You can only compare 2 companies at a time.');
+      return;
+    }
+    selectedForCompare.push(index);
+  } else {
+    selectedForCompare = selectedForCompare.filter(i => i !== index);
+  }
+
+  if (selectedForCompare.length === 2) {
+    showComparison();
+  } else {
+    document.getElementById('compare-panel').style.display = 'none';
+  }
+}
+
+function showComparison() {
+  const c1 = allCompanies[selectedForCompare[0]];
+  const c2 = allCompanies[selectedForCompare[1]];
+  const panel = document.getElementById('compare-panel');
+  const body = document.getElementById('compare-body');
+
+  function companyCard(c) {
+    const fin = c.sec_filing?.financials || {};
+    return `
+      <div class="compare-card">
+        <h3><span class="ticker-badge">${c.ticker}</span> ${c.company_name}</h3>
+        <div class="compare-row">
+          <span class="clabel">Overall Score</span>
+          <span class="cvalue">${c.overall_score ?? 'N/A'}</span>
+        </div>
+        <div class="compare-row">
+          <span class="clabel">Revenue Growth</span>
+          <span class="cvalue">${c.scores?.revenue_growth?.score ?? 'N/A'}</span>
+        </div>
+        <div class="compare-row">
+          <span class="clabel">Financial Strength</span>
+          <span class="cvalue">${c.scores?.financial_strength?.score ?? 'N/A'}</span>
+        </div>
+        <div class="compare-row">
+          <span class="clabel">EPS</span>
+          <span class="cvalue">${fin.eps != null ? '$' + fin.eps.toFixed(2) : 'N/A'}</span>
+        </div>
+        <div class="compare-row">
+          <span class="clabel">P/E Ratio</span>
+          <span class="cvalue">${fin.pe_ratio != null ? fin.pe_ratio.toFixed(1) : 'N/A'}</span>
+        </div>
+        <div class="compare-row">
+          <span class="clabel">Revenue</span>
+          <span class="cvalue">${fin.revenue != null ? '$' + (fin.revenue / 1e9).toFixed(1) + 'B' : 'N/A'}</span>
+        </div>
+      </div>`;
+  }
+
+  body.innerHTML = companyCard(c1) + companyCard(c2);
+  panel.style.display = 'block';
+  panel.scrollIntoView({ behavior: 'smooth' });
+}
+
+function clearComparison() {
+  selectedForCompare = [];
+  document.getElementById('compare-panel').style.display = 'none';
+  document.querySelectorAll('.compare-check').forEach(cb => cb.checked = false);
+}
