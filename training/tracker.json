@@ -1,10 +1,10 @@
 {
-  "current_week": 6,
+  "current_week": 7,
   "total_weeks": 12,
-  "current_lesson": "Week 6: SEC Filings & AI Summaries",
-  "project_completion_percent": 50,
-  "learning_progress_percent": 50,
-  "github_progress_percent": 50,
+  "current_lesson": "Week 7: News & Company Comparison",
+  "project_completion_percent": 58,
+  "learning_progress_percent": 58,
+  "github_progress_percent": 58,
   "completed_milestones": [
     "Week 1: Installed Python, GitHub Desktop, VS Code",
     "Week 1: Created and published GitHub repository",
@@ -23,9 +23,12 @@
     "Week 5: Scored all 19 companies and confirmed dashboard displays full universe",
     "Week 6: Fetched SEC 10-K filings for all 19 companies via SEC EDGAR",
     "Week 6: Added EPS, P/E Ratio, and Revenue to dashboard popup modal",
-    "Week 6: Confirmed SEC Filing button works for all 19 companies"
+    "Week 6: Confirmed SEC Filing button works for all 19 companies",
+    "Week 7: Added live Yahoo Finance news feed for all 19 companies",
+    "Week 7: Built company comparison panel with side-by-side scoring",
+    "Week 7: Created run.py to launch all servers with one command"
   ],
   "current_blockers": [],
-  "recommended_next_task": "Start Week 7: News & Company Comparison",
-  "estimated_time_remaining_hours": 63
+  "recommended_next_task": "Start Week 8: Full Training Portal",
+  "estimated_time_remaining_hours": 49
 }

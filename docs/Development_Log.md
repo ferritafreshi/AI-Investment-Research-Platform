@@ -29,3 +29,9 @@
 - Updated fetch_data.py to capture pe_ratio and revenue fields
 - Added SEC Filing popup modal to dashboard with EPS, P/E Ratio, and Revenue
 - Confirmed SEC Filing button works for all 19 companies
+## Week 7
+- Created app/news_proxy.py using Flask to fetch Yahoo Finance RSS news feeds
+- Added live news headlines as clickable links on each company row
+- Built company comparison panel showing scores and financials side by side
+- Added Compare checkbox below SEC Filing button on each company
+- Created run.py to start all servers and update dashboard data with one command
