@@ -7,7 +7,7 @@
   body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 40px; }
   .container { max-width: 800px; margin: 0 auto; }
   h1 { font-size: 24px; margin-bottom: 4px; }
-  .subtitle { color: #94a3b8; margin-bottom: 30px; }
+  .subtitle { color: #94a3b8; margin-bottom: 16px; }
   .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
   .bar-bg { background: #334155; border-radius: 8px; height: 14px; overflow: hidden; margin-top: 8px; }
   .bar-fill { background: #22c55e; height: 100%; transition: width 0.4s; }
@@ -17,12 +17,22 @@
   .complete { color: #22c55e; }
   .upcoming { color: #64748b; }
   .error { color: #f87171; font-size: 13px; margin-top: 8px; }
+  .nav-links { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+  .nav-btn { background: #1e293b; color: #94a3b8; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; border: 1px solid #334155; }
+  .nav-btn:hover { background: #334155; color: #e2e8f0; }
+  .nav-btn.active { background: #22c55e; color: #000; font-weight: 600; border-color: #22c55e; }
 </style>
 </head>
 <body>
 <div class="container">
   <h1>AI Investment Research Platform</h1>
   <div class="subtitle">Training Portal — v0.1</div>
+  <div class="nav-links">
+    <a href="index.html" class="nav-btn active">Progress</a>
+    <a href="lessons.html" class="nav-btn">Lessons</a>
+    <a href="glossary.html" class="nav-btn">Glossary</a>
+    <a href="quiz.html" class="nav-btn">Quiz</a>
+  </div>
 
   <div class="card">
     <div class="row"><span>Overall Progress</span><span id="pct">Loading...</span></div>

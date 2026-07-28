@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Glossary — AI Investment Research Platform</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 40px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  .subtitle { color: #94a3b8; margin-bottom: 16px; }
+  .nav-links { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+  .nav-btn { background: #1e293b; color: #94a3b8; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; border: 1px solid #334155; }
+  .nav-btn:hover { background: #334155; color: #e2e8f0; }
+  .nav-btn.active { background: #22c55e; color: #000; font-weight: 600; border-color: #22c55e; }
+  .search-box { width: 100%; padding: 10px 16px; background: #1e293b; border: 1px solid #334155; border-radius: 8px; color: #e2e8f0; font-size: 14px; margin-bottom: 24px; box-sizing: border-box; }
+  .search-box:focus { outline: none; border-color: #22c55e; }
+  .term-card { background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 14px; border-left: 4px solid #3b82f6; }
+  .term-card h3 { font-size: 16px; color: #63b3ed; margin-bottom: 8px; }
+  .term-card p { font-size: 14px; color: #cbd5e1; line-height: 1.6; margin: 0; }
+  .term-card .example { margin-top: 10px; padding: 10px; background: #0f172a; border-radius: 6px; font-size: 13px; color: #94a3b8; }
+  .term-card .example strong { color: #22c55e; }
+  .category-title { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #475569; margin: 24px 0 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AI Investment Research Platform</h1>
+  <div class="subtitle">Training Portal — Glossary</div>
+
+  <div class="nav-links">
+    <a href="index.html" class="nav-btn">📊 Progress</a>
+    <a href="lessons.html" class="nav-btn">📚 Lessons</a>
+    <a href="glossary.html" class="nav-btn active">📖 Glossary</a>
+    <a href="quiz.html" class="nav-btn">✏️ Quiz</a>
+  </div>
+
+  <input type="text" class="search-box" id="search" placeholder="Search terms..." onkeyup="filterTerms()">
+
+  <div id="terms-container">
+
+    <div class="category-title">Financial Metrics</div>
+
+    <div class="term-card">
+      <h3>CAGR — Compound Annual Growth Rate</h3>
+      <p>The rate at which a value (like revenue) grows per year on average over a period of time. It smooths out ups and downs to give a single consistent growth number.</p>
+      <div class="example"><strong>Example:</strong> If revenue was $100M in 2021 and $173M in 2024, the 3-year CAGR is 20% — meaning it grew 20% per year on average.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>EPS — Earnings Per Share</h3>
+      <p>The amount of profit a company earns for each share of stock. Higher EPS generally means the company is more profitable.</p>
+      <div class="example"><strong>Example:</strong> If a company earns $1 billion in profit and has 100 million shares, EPS = $10.00 per share.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>P/E Ratio — Price to Earnings Ratio</h3>
+      <p>How much investors are paying for each dollar of earnings. A high P/E means investors expect strong future growth. A low P/E may indicate the stock is undervalued.</p>
+      <div class="example"><strong>Example:</strong> If a stock trades at $150 and EPS is $10, P/E = 15x. Investors pay $15 for every $1 of earnings.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>FCF — Free Cash Flow</h3>
+      <p>The cash a company generates after paying for its operations and capital expenditures. Positive FCF means the company has money left over to invest, pay dividends, or buy back stock.</p>
+      <div class="example"><strong>Example:</strong> Operating Cash Flow of $10B minus Capital Expenditures of $3B = FCF of $7B.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>Interest Coverage Ratio</h3>
+      <p>How easily a company can pay its interest expenses using its operating income. A ratio above 3x is generally considered safe. Below 1x means the company cannot cover its interest.</p>
+      <div class="example"><strong>Example:</strong> Operating Income of $5B divided by Interest Expense of $500M = Coverage of 10x. Very strong.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>Market Cap — Market Capitalization</h3>
+      <p>The total value of all a company's shares of stock. It represents what the market thinks the entire company is worth.</p>
+      <div class="example"><strong>Example:</strong> 1 billion shares × $150 per share = $150 billion market cap.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>Revenue</h3>
+      <p>The total amount of money a company earns from selling its products or services before any expenses are deducted. Also called "top line" or "sales".</p>
+      <div class="example"><strong>Example:</strong> Microsoft sells software, cloud services, and hardware. All those sales combined = total revenue.</div>
+    </div>
+
+    <div class="category-title">SEC & Regulatory</div>
+
+    <div class="term-card">
+      <h3>10-K Filing</h3>
+      <p>An annual report that every US public company must file with the SEC. It contains detailed financial statements, business description, risk factors, and management discussion.</p>
+      <div class="example"><strong>Example:</strong> Microsoft files a 10-K every July covering its fiscal year ending June 30.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>SEC — Securities and Exchange Commission</h3>
+      <p>The US government agency that regulates the stock market and requires public companies to disclose financial information. All filings are publicly available on SEC EDGAR for free.</p>
+      <div class="example"><strong>Example:</strong> You can read any company's 10-K at edgar.sec.gov at no cost.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>SEC EDGAR</h3>
+      <p>The SEC's free online database where all public company filings are stored and searchable. EDGAR stands for Electronic Data Gathering, Analysis, and Retrieval.</p>
+      <div class="example"><strong>Example:</strong> Our platform fetches 10-K filing URLs directly from SEC EDGAR using their free API.</div>
+    </div>
+
+    <div class="category-title">Technical & Platform</div>
+
+    <div class="term-card">
+      <h3>yfinance</h3>
+      <p>A free Python library that downloads financial data from Yahoo Finance. Used in this platform to fetch company info, revenue, cash flow, and balance sheet data.</p>
+      <div class="example"><strong>Example:</strong> yf.Ticker("MSFT").financials returns Microsoft's income statement as a table.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>JSON — JavaScript Object Notation</h3>
+      <p>A simple text format for storing and exchanging data. This platform uses JSON files to store company scores, watchlists, and dashboard data.</p>
+      <div class="example"><strong>Example:</strong> {"ticker": "MSFT", "score": 85.6} is a JSON object with two fields.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>RSS Feed</h3>
+      <p>A standardized format websites use to publish frequently updated content like news headlines. Our platform uses Yahoo Finance RSS feeds to show live news for each company.</p>
+      <div class="example"><strong>Example:</strong> Yahoo Finance publishes an RSS feed for every stock ticker that updates with the latest news articles.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>Flask</h3>
+      <p>A lightweight Python web framework used in this platform to build the news proxy server. Flask listens for requests from the browser and fetches news data on its behalf.</p>
+      <div class="example"><strong>Example:</strong> When the dashboard loads, it asks Flask at port 5000 for MSFT news. Flask fetches it from Yahoo and returns it.</div>
+    </div>
+
+    <div class="term-card">
+      <h3>CORS — Cross-Origin Resource Sharing</h3>
+      <p>A browser security rule that prevents a webpage from fetching data from a different domain. Our Flask proxy server bypasses this by acting as a middleman.</p>
+      <div class="example"><strong>Example:</strong> The dashboard at port 8080 cannot directly fetch from Yahoo Finance, so it asks our proxy at port 5000 instead.</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function filterTerms() {
+  const query = document.getElementById('search').value.toLowerCase();
+  const cards = document.querySelectorAll('.term-card');
+  cards.forEach(function(card) {
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(query) ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>
