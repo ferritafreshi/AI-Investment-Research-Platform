@@ -6,8 +6,8 @@
   { "week": 5, "title": "Expand Company Universe", "status": "complete", "description": "Created watchlist.json with 19 tickers. Updated all scripts to use it." },
   { "week": 6, "title": "SEC Filings & AI Summaries", "status": "complete", "description": "Fetched 10-K filings from SEC EDGAR. Added EPS, P/E, Revenue to dashboard popup." },
   { "week": 7, "title": "News & Company Comparison", "status": "complete", "description": "Added live Yahoo Finance news feed and side-by-side company comparison panel." },
-  { "week": 8, "title": "Full Training Portal", "status": "in_progress", "description": "Building lessons, glossary, and quiz pages for the training portal." },
-  { "week": 9, "title": "Charts & Visual Trends", "status": "upcoming", "description": "Add price charts and visual score trends for each company." },
+  { "week": 8, "title": "Full Training Portal", "status": "complete", "description": "Building lessons, glossary, and quiz pages for the training portal." },
+  { "week": 9, "title": "Charts & Visual Trends", "status": "in_progress", "description": "Add price charts and visual score trends for each company." },
   { "week": 10, "title": "AI Q&A Engine", "status": "upcoming", "description": "Build a question and answer engine about the companies and scores." },
   { "week": 11, "title": "Dashboard Polish & Risk Analysis", "status": "upcoming", "description": "Improve UI design and add risk scoring to each company." },
   { "week": 12, "title": "MVP Hardening & Release", "status": "upcoming", "description": "Final testing, documentation, and public release preparation." }

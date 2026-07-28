@@ -35,3 +35,9 @@
 - Built company comparison panel showing scores and financials side by side
 - Added Compare checkbox below SEC Filing button on each company
 - Created run.py to start all servers and update dashboard data with one command
+## Week 8
+- Built training/lessons.html with weekly lesson notes for Weeks 1-7
+- Built training/glossary.html with searchable definitions for 15 financial and technical terms
+- Built training/quiz.html with 10 questions, Previous/Next navigation, and answer review mode
+- Added navigation links to all training portal pages
+- Added score methodology
