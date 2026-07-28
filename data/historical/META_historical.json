@@ -1,0 +1,21 @@
+{
+  "ticker": "META",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 116.61
+    },
+    {
+      "year": "2023",
+      "revenue": 134.9
+    },
+    {
+      "year": "2024",
+      "revenue": 164.5
+    },
+    {
+      "year": "2025",
+      "revenue": 200.97
+    }
+  ]
+}

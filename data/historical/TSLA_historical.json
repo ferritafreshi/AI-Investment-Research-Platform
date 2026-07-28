@@ -1,0 +1,21 @@
+{
+  "ticker": "TSLA",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 81.46
+    },
+    {
+      "year": "2023",
+      "revenue": 96.77
+    },
+    {
+      "year": "2024",
+      "revenue": 97.69
+    },
+    {
+      "year": "2025",
+      "revenue": 94.83
+    }
+  ]
+}

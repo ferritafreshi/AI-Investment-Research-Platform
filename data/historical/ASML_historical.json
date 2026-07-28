@@ -1,0 +1,21 @@
+{
+  "ticker": "ASML",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 21.17
+    },
+    {
+      "year": "2023",
+      "revenue": 27.56
+    },
+    {
+      "year": "2024",
+      "revenue": 28.26
+    },
+    {
+      "year": "2025",
+      "revenue": 32.67
+    }
+  ]
+}

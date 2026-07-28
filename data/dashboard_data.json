@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-27T18:04:20.151809",
+  "generated_at": "2026-07-27T20:12:48.724316",
   "total_companies": 19,
   "average_score": 83.0,
   "top_company": {
@@ -32,7 +32,25 @@
           "revenue": 253491003392,
           "pe_ratio": 31.171427
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2023",
+          "revenue": 26.97
+        },
+        {
+          "year": "2024",
+          "revenue": 60.92
+        },
+        {
+          "year": "2025",
+          "revenue": 130.5
+        },
+        {
+          "year": "2026",
+          "revenue": 215.94
+        }
+      ]
     },
     {
       "ticker": "LLY",
@@ -58,7 +76,25 @@
           "revenue": 72248999936,
           "pe_ratio": 40.81285
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 28.54
+        },
+        {
+          "year": "2023",
+          "revenue": 34.12
+        },
+        {
+          "year": "2024",
+          "revenue": 45.04
+        },
+        {
+          "year": "2025",
+          "revenue": 65.18
+        }
+      ]
     },
     {
       "ticker": "NOW",
@@ -84,7 +120,25 @@
           "revenue": 13959999488,
           "pe_ratio": 62.613495
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 7.25
+        },
+        {
+          "year": "2023",
+          "revenue": 8.97
+        },
+        {
+          "year": "2024",
+          "revenue": 10.98
+        },
+        {
+          "year": "2025",
+          "revenue": 13.28
+        }
+      ]
     },
     {
       "ticker": "META",
@@ -110,7 +164,25 @@
           "revenue": 214962995200,
           "pe_ratio": 23.471016
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 116.61
+        },
+        {
+          "year": "2023",
+          "revenue": 134.9
+        },
+        {
+          "year": "2024",
+          "revenue": 164.5
+        },
+        {
+          "year": "2025",
+          "revenue": 200.97
+        }
+      ]
     },
     {
       "ticker": "PANW",
@@ -136,7 +208,25 @@
           "revenue": 10606499840,
           "pe_ratio": 302.7876
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 5.5
+        },
+        {
+          "year": "2023",
+          "revenue": 6.89
+        },
+        {
+          "year": "2024",
+          "revenue": 8.03
+        },
+        {
+          "year": "2025",
+          "revenue": 9.22
+        }
+      ]
     },
     {
       "ticker": "ASML",
@@ -162,7 +252,25 @@
           "revenue": 35327500288,
           "pe_ratio": 60.231026
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 21.17
+        },
+        {
+          "year": "2023",
+          "revenue": 27.56
+        },
+        {
+          "year": "2024",
+          "revenue": 28.26
+        },
+        {
+          "year": "2025",
+          "revenue": 32.67
+        }
+      ]
     },
     {
       "ticker": "INTU",
@@ -188,7 +296,25 @@
           "revenue": 20924999680,
           "pe_ratio": 17.918419
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 12.73
+        },
+        {
+          "year": "2023",
+          "revenue": 14.37
+        },
+        {
+          "year": "2024",
+          "revenue": 16.29
+        },
+        {
+          "year": "2025",
+          "revenue": 18.83
+        }
+      ]
     },
     {
       "ticker": "MA",
@@ -214,7 +340,25 @@
           "revenue": 33938999296,
           "pe_ratio": 31.64609
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 22.24
+        },
+        {
+          "year": "2023",
+          "revenue": 25.1
+        },
+        {
+          "year": "2024",
+          "revenue": 28.17
+        },
+        {
+          "year": "2025",
+          "revenue": 32.79
+        }
+      ]
     },
     {
       "ticker": "SPOT",
@@ -240,7 +384,25 @@
           "revenue": 17528999936,
           "pe_ratio": 33.553062
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 11.73
+        },
+        {
+          "year": "2023",
+          "revenue": 13.25
+        },
+        {
+          "year": "2024",
+          "revenue": 15.67
+        },
+        {
+          "year": "2025",
+          "revenue": 17.19
+        }
+      ]
     },
     {
       "ticker": "MSFT",
@@ -266,7 +428,25 @@
           "revenue": 318272995328,
           "pe_ratio": 23.703814
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 198.27
+        },
+        {
+          "year": "2023",
+          "revenue": 211.91
+        },
+        {
+          "year": "2024",
+          "revenue": 245.12
+        },
+        {
+          "year": "2025",
+          "revenue": 281.72
+        }
+      ]
     },
     {
       "ticker": "GOOGL",
@@ -292,7 +472,25 @@
           "revenue": 422498009088,
           "pe_ratio": 26.890007
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 282.84
+        },
+        {
+          "year": "2023",
+          "revenue": 307.39
+        },
+        {
+          "year": "2024",
+          "revenue": 350.02
+        },
+        {
+          "year": "2025",
+          "revenue": 402.84
+        }
+      ]
     },
     {
       "ticker": "AMZN",
@@ -318,7 +516,25 @@
           "revenue": 742775980032,
           "pe_ratio": 29.933493
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 513.98
+        },
+        {
+          "year": "2023",
+          "revenue": 574.78
+        },
+        {
+          "year": "2024",
+          "revenue": 637.96
+        },
+        {
+          "year": "2025",
+          "revenue": 716.92
+        }
+      ]
     },
     {
       "ticker": "V",
@@ -344,7 +560,25 @@
           "revenue": 43027001344,
           "pe_ratio": 31.432863
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 29.31
+        },
+        {
+          "year": "2023",
+          "revenue": 32.65
+        },
+        {
+          "year": "2024",
+          "revenue": 35.93
+        },
+        {
+          "year": "2025",
+          "revenue": 40.0
+        }
+      ]
     },
     {
       "ticker": "ADBE",
@@ -370,7 +604,25 @@
           "revenue": 25198000128,
           "pe_ratio": 13.425532
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 17.61
+        },
+        {
+          "year": "2023",
+          "revenue": 19.41
+        },
+        {
+          "year": "2024",
+          "revenue": 21.5
+        },
+        {
+          "year": "2025",
+          "revenue": 23.77
+        }
+      ]
     },
     {
       "ticker": "COST",
@@ -396,7 +648,25 @@
           "revenue": 293586993152,
           "pe_ratio": 47.168526
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 226.95
+        },
+        {
+          "year": "2023",
+          "revenue": 242.29
+        },
+        {
+          "year": "2024",
+          "revenue": 254.45
+        },
+        {
+          "year": "2025",
+          "revenue": 275.24
+        }
+      ]
     },
     {
       "ticker": "CRWD",
@@ -422,7 +692,25 @@
           "revenue": 5094199808,
           "pe_ratio": null
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2023",
+          "revenue": 2.24
+        },
+        {
+          "year": "2024",
+          "revenue": 3.06
+        },
+        {
+          "year": "2025",
+          "revenue": 3.95
+        },
+        {
+          "year": "2026",
+          "revenue": 4.81
+        }
+      ]
     },
     {
       "ticker": "TSLA",
@@ -448,7 +736,25 @@
           "revenue": 97878999040,
           "pe_ratio": 344.4818
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 81.46
+        },
+        {
+          "year": "2023",
+          "revenue": 96.77
+        },
+        {
+          "year": "2024",
+          "revenue": 97.69
+        },
+        {
+          "year": "2025",
+          "revenue": 94.83
+        }
+      ]
     },
     {
       "ticker": "AAPL",
@@ -474,7 +780,25 @@
           "revenue": 451442016256,
           "pe_ratio": 39.534378
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 394.33
+        },
+        {
+          "year": "2023",
+          "revenue": 383.29
+        },
+        {
+          "year": "2024",
+          "revenue": 391.04
+        },
+        {
+          "year": "2025",
+          "revenue": 416.16
+        }
+      ]
     },
     {
       "ticker": "GS",
@@ -500,7 +824,25 @@
           "revenue": 67569999872,
           "pe_ratio": 16.287472
         }
-      }
+      },
+      "revenue_history": [
+        {
+          "year": "2022",
+          "revenue": 47.37
+        },
+        {
+          "year": "2023",
+          "revenue": 46.25
+        },
+        {
+          "year": "2024",
+          "revenue": 53.51
+        },
+        {
+          "year": "2025",
+          "revenue": 58.28
+        }
+      ]
     }
   ]
 }

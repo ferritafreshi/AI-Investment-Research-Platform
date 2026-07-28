@@ -1,0 +1,21 @@
+{
+  "ticker": "LLY",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 28.54
+    },
+    {
+      "year": "2023",
+      "revenue": 34.12
+    },
+    {
+      "year": "2024",
+      "revenue": 45.04
+    },
+    {
+      "year": "2025",
+      "revenue": 65.18
+    }
+  ]
+}

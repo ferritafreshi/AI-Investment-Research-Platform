@@ -1,0 +1,21 @@
+{
+  "ticker": "GS",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 47.37
+    },
+    {
+      "year": "2023",
+      "revenue": 46.25
+    },
+    {
+      "year": "2024",
+      "revenue": 53.51
+    },
+    {
+      "year": "2025",
+      "revenue": 58.28
+    }
+  ]
+}

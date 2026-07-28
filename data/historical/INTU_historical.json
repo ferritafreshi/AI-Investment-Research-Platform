@@ -1,0 +1,21 @@
+{
+  "ticker": "INTU",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 12.73
+    },
+    {
+      "year": "2023",
+      "revenue": 14.37
+    },
+    {
+      "year": "2024",
+      "revenue": 16.29
+    },
+    {
+      "year": "2025",
+      "revenue": 18.83
+    }
+  ]
+}

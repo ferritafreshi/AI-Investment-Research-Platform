@@ -44,6 +44,13 @@ def load_filing(ticker):
     
     return result if result else None
 
+def load_historical(ticker):
+    """Load historical revenue data for a ticker if it exists."""
+    historical_file = os.path.join("data/historical", f"{ticker.upper()}_historical.json")
+    if os.path.exists(historical_file):
+        with open(historical_file, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return None
 
 def load_score_files(tickers):
     companies = []
@@ -62,6 +69,10 @@ def load_score_files(tickers):
                     "financials": filing.get("financials")
                 }
             companies.append(data)
+            # Attach historical revenue if available
+            historical = load_historical(ticker)
+            if historical:
+                data["revenue_history"] = historical.get("revenue_history", [])
         else:
             print(f"No score file found for {ticker}, skipping.")
     return companies

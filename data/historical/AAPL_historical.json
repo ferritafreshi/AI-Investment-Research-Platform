@@ -1,0 +1,21 @@
+{
+  "ticker": "AAPL",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 394.33
+    },
+    {
+      "year": "2023",
+      "revenue": 383.29
+    },
+    {
+      "year": "2024",
+      "revenue": 391.04
+    },
+    {
+      "year": "2025",
+      "revenue": 416.16
+    }
+  ]
+}

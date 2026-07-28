@@ -1,0 +1,21 @@
+{
+  "ticker": "SPOT",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 11.73
+    },
+    {
+      "year": "2023",
+      "revenue": 13.25
+    },
+    {
+      "year": "2024",
+      "revenue": 15.67
+    },
+    {
+      "year": "2025",
+      "revenue": 17.19
+    }
+  ]
+}
