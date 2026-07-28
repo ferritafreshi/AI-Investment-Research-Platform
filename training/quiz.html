@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz — AI Investment Research Platform</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 40px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  .subtitle { color: #94a3b8; margin-bottom: 16px; }
+  .nav-links { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+  .nav-btn { background: #1e293b; color: #94a3b8; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; border: 1px solid #334155; }
+  .nav-btn:hover { background: #334155; color: #e2e8f0; }
+  .nav-btn.active { background: #22c55e; color: #000; font-weight: 600; border-color: #22c55e; }
+  .progress-bar-bg { background: #334155; border-radius: 8px; height: 8px; margin-bottom: 28px; }
+  .progress-bar-fill { background: #22c55e; height: 100%; border-radius: 8px; transition: width 0.3s; }
+  .quiz-card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+  .quiz-card h3 { font-size: 16px; color: #e2e8f0; margin-bottom: 16px; line-height: 1.5; }
+  .question-num { font-size: 12px; color: #475569; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .options { display: flex; flex-direction: column; gap: 10px; }
+  .option { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 12px 16px; cursor: pointer; font-size: 14px; color: #cbd5e1; transition: all 0.15s; text-align: left; width: 100%; }
+  .option:hover:not(:disabled) { border-color: #3b82f6; color: #e2e8f0; }
+  .option.correct { background: #14532d; border-color: #22c55e; color: #22c55e; }
+  .option.wrong { background: #450a0a; border-color: #ef4444; color: #ef4444; }
+  .option.selected { border-color: #3b82f6; color: #93c5fd; }
+  .feedback { margin-top: 14px; padding: 12px; border-radius: 8px; font-size: 14px; display: none; line-height: 1.5; }
+  .feedback.correct { background: #14532d; color: #86efac; display: block; }
+  .feedback.wrong { background: #450a0a; color: #fca5a5; display: block; }
+  .nav-buttons { display: flex; gap: 12px; margin-top: 8px; }
+  .nav-quiz-btn { padding: 10px 24px; border-radius: 8px; border: none; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .btn-prev { background: #334155; color: #e2e8f0; }
+  .btn-prev:hover { background: #475569; }
+  .btn-next { background: #3b82f6; color: #fff; }
+  .btn-next:hover { background: #2563eb; }
+  .btn-finish { background: #22c55e; color: #000; }
+  .btn-finish:hover { background: #16a34a; }
+  .score-panel { background: #1e293b; border-radius: 12px; padding: 32px; text-align: center; display: none; }
+  .score-panel h2 { font-size: 36px; color: #22c55e; margin-bottom: 8px; }
+  .score-panel p { color: #94a3b8; font-size: 16px; margin-bottom: 20px; }
+  .action-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .restart-btn { background: #22c55e; color: #000; border: none; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .restart-btn:hover { background: #16a34a; }
+  .review-btn { background: #3b82f6; color: #fff; border: none; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .review-btn:hover { background: #2563eb; }
+  .review-card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+  .review-card h3 { font-size: 15px; color: #e2e8f0; margin-bottom: 12px; line-height: 1.5; }
+  .review-answer { font-size: 14px; margin: 4px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AI Investment Research Platform</h1>
+  <div class="subtitle">Training Portal — Knowledge Quiz</div>
+
+  <div class="nav-links">
+    <a href="index.html" class="nav-btn">📊 Progress</a>
+    <a href="lessons.html" class="nav-btn">📚 Lessons</a>
+    <a href="glossary.html" class="nav-btn">📖 Glossary</a>
+    <a href="quiz.html" class="nav-btn active">✏️ Quiz</a>
+  </div>
+
+  <div class="progress-bar-bg">
+    <div class="progress-bar-fill" id="progress-bar" style="width:0%"></div>
+  </div>
+
+  <div id="quiz-container"></div>
+
+  <div class="score-panel" id="score-panel">
+    <h2 id="score-text"></h2>
+    <p id="score-sub"></p>
+    <div class="action-btns">
+      <button class="restart-btn" onclick="restartQuiz()">Try Again</button>
+      <button class="review-btn" onclick="showReview()">Review Answers</button>
+    </div>
+  </div>
+
+  <div id="review-container"></div>
+</div>
+
+<script>
+const questions = [
+  {
+    q: "What does CAGR stand for?",
+    options: ["Compound Annual Growth Rate", "Current Asset Growth Ratio", "Capital Adjusted Growth Return", "Cumulative Annual Gain Record"],
+    answer: 0,
+    explanation: "CAGR stands for Compound Annual Growth Rate. It measures how fast revenue or another value grows per year on average."
+  },
+  {
+    q: "What is a 10-K filing?",
+    options: ["A quarterly earnings report", "An annual report filed with the SEC", "A tax document filed with the IRS", "A stock price history report"],
+    answer: 1,
+    explanation: "A 10-K is an annual report every US public company must file with the SEC. It contains detailed financials, risk factors, and business description."
+  },
+  {
+    q: "What does a P/E ratio of 20 mean?",
+    options: ["The company grows 20% per year", "Investors pay $20 for every $1 of earnings", "The stock will double in 20 years", "The company has 20% profit margin"],
+    answer: 1,
+    explanation: "P/E ratio shows how much investors pay per dollar of earnings. P/E of 20 means investors pay $20 for every $1 the company earns."
+  },
+  {
+    q: "What is Free Cash Flow (FCF)?",
+    options: ["Revenue minus taxes", "Cash earned from selling assets", "Operating cash flow minus capital expenditures", "Net income plus depreciation"],
+    answer: 2,
+    explanation: "FCF = Operating Cash Flow - Capital Expenditures. It shows how much cash the company generates after maintaining its business."
+  },
+  {
+    q: "What does an interest coverage ratio of 1x mean?",
+    options: ["The company is very profitable", "The company barely covers its interest payments", "The company has no debt", "The company pays 1% interest"],
+    answer: 1,
+    explanation: "A coverage ratio of 1x means operating income exactly equals interest expense. Any lower and the company cannot cover its debt payments."
+  },
+  {
+    q: "What Python library does this platform use to fetch stock data?",
+    options: ["pandas", "numpy", "yfinance", "requests"],
+    answer: 2,
+    explanation: "yfinance is a free Python library that downloads financial data from Yahoo Finance including income statements, balance sheets, and cash flows."
+  },
+  {
+    q: "Why does this platform use a Flask proxy server for news?",
+    options: ["Flask is faster than Python", "To bypass browser CORS security restrictions", "Yahoo Finance requires a paid API key", "To store news in a database"],
+    answer: 1,
+    explanation: "Browsers block direct requests to external domains (CORS policy). Our Flask proxy fetches the news on behalf of the browser."
+  },
+  {
+    q: "What is SEC EDGAR?",
+    options: ["A paid financial data service", "A stock trading platform", "The SEC's free public database of company filings", "A Python library for SEC data"],
+    answer: 2,
+    explanation: "SEC EDGAR is a free public database where all US public company filings are stored. Our platform uses it to fetch 10-K filing URLs without any API key."
+  },
+  {
+    q: "In our scoring system, what score does a company with no debt receive for Financial Strength?",
+    options: ["100", "75", "95", "50"],
+    answer: 2,
+    explanation: "Companies with no interest-bearing debt receive a Financial Strength score of 95 — excellent but not perfect."
+  },
+  {
+    q: "What does EPS stand for?",
+    options: ["Equity Per Share", "Earnings Per Share", "Estimated Profit Score", "Exchange Price Standard"],
+    answer: 1,
+    explanation: "EPS stands for Earnings Per Share. It tells you how much profit the company earns for each share of stock outstanding."
+  }
+];
+
+let current = 0;
+let userAnswers = new Array(questions.length).fill(null);
+
+function renderQuestion() {
+  const q = questions[current];
+  const pct = ((current + 1) / questions.length) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+
+  const answered = userAnswers[current] !== null;
+  const userAnswer = userAnswers[current];
+
+  const optionsHtml = q.options.map(function(opt, i) {
+    let cls = 'option';
+    if (answered) {
+      if (i === q.answer) cls += ' correct';
+      else if (i === userAnswer) cls += ' wrong';
+    }
+    return '<button class="' + cls + '" onclick="selectAnswer(' + i + ')"' + (answered ? ' disabled' : '') + '>' + opt + '</button>';
+  }).join('');
+
+  let feedbackHtml = '';
+  if (answered) {
+    const correct = userAnswer === q.answer;
+    feedbackHtml = '<div class="feedback ' + (correct ? 'correct' : 'wrong') + '">' +
+      (correct ? '✅ Correct! ' : '❌ Not quite. ') + q.explanation + '</div>';
+  }
+
+  const isLast = current === questions.length - 1;
+  const allAnswered = userAnswers.every(function(a) { return a !== null; });
+
+  const navHtml =
+    '<div class="nav-buttons">' +
+      (current > 0 ? '<button class="nav-quiz-btn btn-prev" onclick="goTo(' + (current - 1) + ')">← Previous</button>' : '') +
+      (isLast
+        ? (allAnswered ? '<button class="nav-quiz-btn btn-finish" onclick="showScore()">Finish Quiz</button>' : '')
+        : '<button class="nav-quiz-btn btn-next" onclick="goTo(' + (current + 1) + ')">Next →</button>'
+      ) +
+    '</div>';
+
+  document.getElementById('quiz-container').innerHTML =
+    '<div class="quiz-card">' +
+      '<div class="question-num">Question ' + (current + 1) + ' of ' + questions.length + '</div>' +
+      '<h3>' + q.q + '</h3>' +
+      '<div class="options">' + optionsHtml + '</div>' +
+      feedbackHtml +
+    '</div>' +
+    navHtml;
+}
+
+function selectAnswer(index) {
+  if (userAnswers[current] !== null) return;
+  userAnswers[current] = index;
+  renderQuestion();
+}
+
+function goTo(index) {
+  current = index;
+  renderQuestion();
+}
+
+function showScore() {
+  document.getElementById('quiz-container').innerHTML = '';
+  document.getElementById('progress-bar').style.width = '100%';
+  const score = userAnswers.filter(function(a, i) { return a === questions[i].answer; }).length;
+  const panel = document.getElementById('score-panel');
+  panel.style.display = 'block';
+  document.getElementById('score-text').textContent = score + ' / ' + questions.length;
+
+  let msg = '';
+  if (score === questions.length) msg = 'Perfect score! You have mastered the material.';
+  else if (score >= 8) msg = 'Excellent work! You have a strong understanding.';
+  else if (score >= 6) msg = 'Good job! Review the lessons for the ones you missed.';
+  else msg = 'Keep studying! Visit the Lessons and Glossary pages to review.';
+
+  document.getElementById('score-sub').textContent = msg;
+}
+
+function showReview() {
+  const container = document.getElementById('review-container');
+  container.innerHTML = '<h2 style="margin:28px 0 20px;color:#e2e8f0;">Answer Review</h2>' +
+    questions.map(function(q, i) {
+      const userAnswer = userAnswers[i];
+      const correct = userAnswer === q.answer;
+      return '<div class="review-card" style="border-left:4px solid ' + (correct ? '#22c55e' : '#ef4444') + '">' +
+        '<div class="question-num">Question ' + (i + 1) + '</div>' +
+        '<h3>' + q.q + '</h3>' +
+        '<p class="review-answer" style="color:' + (correct ? '#22c55e' : '#ef4444') + '">Your answer: ' + (userAnswer !== null ? q.options[userAnswer] : 'Not answered') + '</p>' +
+        (!correct ? '<p class="review-answer" style="color:#22c55e">Correct answer: ' + q.options[q.answer] + '</p>' : '') +
+        '<div style="margin-top:10px;padding:12px;background:#0f172a;border-radius:8px;font-size:13px;color:#94a3b8;">' +
+        (correct ? '✅ ' : '❌ ') + q.explanation + '</div>' +
+        '</div>';
+    }).join('');
+  container.scrollIntoView({ behavior: 'smooth' });
+}
+
+function restartQuiz() {
+  current = 0;
+  userAnswers = new Array(questions.length).fill(null);
+  document.getElementById('score-panel').style.display = 'none';
+  document.getElementById('review-container').innerHTML = '';
+  renderQuestion();
+}
+
+    renderQuestion();
+  </script>
+</body>
+</html>

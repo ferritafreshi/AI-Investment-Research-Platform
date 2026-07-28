@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lessons — AI Investment Research Platform</title>
+<style>
+  body { font-family: 'Segoe UI', sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 40px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  .subtitle { color: #94a3b8; margin-bottom: 16px; }
+  .nav-links { display: flex; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+  .nav-btn { background: #1e293b; color: #94a3b8; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 14px; border: 1px solid #334155; }
+  .nav-btn:hover { background: #334155; color: #e2e8f0; }
+  .nav-btn.active { background: #22c55e; color: #000; font-weight: 600; border-color: #22c55e; }
+  .week-card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #22c55e; }
+  .week-card h2 { font-size: 18px; color: #22c55e; margin-bottom: 12px; }
+  .week-card ul { padding-left: 20px; }
+  .week-card ul li { margin-bottom: 8px; font-size: 14px; color: #cbd5e1; line-height: 1.5; }
+  .week-card .what-learned { margin-top: 14px; padding: 12px; background: #0f172a; border-radius: 8px; font-size: 13px; color: #94a3b8; }
+  .week-card .what-learned strong { color: #63b3ed; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>AI Investment Research Platform</h1>
+  <div class="subtitle">Training Portal — Weekly Lessons</div>
+
+  <div class="nav-links">
+    <a href="index.html" class="nav-btn">📊 Progress</a>
+    <a href="lessons.html" class="nav-btn active">📚 Lessons</a>
+    <a href="glossary.html" class="nav-btn">📖 Glossary</a>
+    <a href="quiz.html" class="nav-btn">✏️ Quiz</a>
+  </div>
+
+  <div class="week-card">
+    <h2>Week 1 — Foundations & GitHub Setup</h2>
+    <ul>
+      >Installed Python, VS Code, and GitHub Desktop</li>
+      >Created the GitHub repository and project folder structure</li>
+      >Wrote Vision.md, Project_Constitution.md, and README</li>
+    </ul>
+    <div class="what-learned"><strong>Key concept:</strong> Version control with Git allows you to track every change made to your project and revert if something goes wrong.</div>
+  </div>
+
+  <div class="week-card">
+    <h2>Week 2 — First Live Data Pull</h2>
+    <ul>
+      >Set up Python virtual environment and installed yfinance</li>
+      >Built fetch_data.py to pull live stock data from Yahoo Finance</li>
+      >Saved company snapshots (market cap, EPS, FCF) to data/raw/</li>
+    </ul>
+    <div class="what-learned"><strong>Key concept:</strong> yfinance is a free Python library that connects to Yahoo Finance and returns real company financial data as Python dictionaries.</div>
+  </div>
+
+  <div class="week-card">
+    <h2>Week 3 — Scoring Engine v1</h2>
+    <ul>
+      >Built scoring.py with two scoring functions</li>
+      >score_revenue_growth(): calculates 3-year revenue CAGR, scores 0–100</li>
+      >score_financial_strength(): calculates interest coverage ratio, scores 0–100</li>
+      >Tested on MSFT, NVDA, COST</li>
+    </ul>
+    <div class="what-learned"><strong>Key concept:</strong> CAGR (Compound Annual Growth Rate) measures how fast revenue grows per year on average. A 15% CAGR means revenue doubles roughly every 5 years.</div>
+  </div>
+
+  <div class="week-card">
+    <h2>Week 4 — Working Dashboard MVP</h2>
+    <ul>
+      >Built dashboard.html, style.css, and dashboard.js</li>
+      >Built export_dashboard_data.py to aggregate scores into dashboard_data.json</li>
+      >Dashboard loads in browser showing company rankings with score bars</li>
+    </ul>
+    <div class="what-learned"><strong>Key concept:</strong> A static HTML dashboard reads a JSON file to display data. No backend server needed — the browser does all the rendering using JavaScript.</div>
+  </div>
+
+  <div class="week-card">
+    <h2>Week 5 — Expand Company Universe</h2>
+    <ul>
+      >Created data/watchlist.json with 19 growth stock tickers</li>
+      >Updated fetch_data.py and scoring.py to read from watchlist.json</li>
+      >Scored all 19 companies and confirmed dashboard shows full universe</li>
+    </ul>
+    <div class="what-learned"><strong>Key concept:</strong> Separating configuration (watchlist.json) from code (scoring.py) makes it easy to add or remove companies without changing any Python code.</div>
+  </div>
+
+  <div class="week-card">
+    <h2>Week 6 — SEC Filings & Key Financials</h2>
+    <ul>
+      >Built fetch_sec.py to fetch 10-K filings from SEC EDGAR for all 19 tickers</li>
+      >Added EPS, P/E Ratio, and Revenue to each company's data</li>
+      >Built a popup modal on the dashboard showing SEC filing details and financials</li>
+    </ul>
+    <div class="what-learned"><strong>Key concept:</strong> The SEC EDGAR database is free and public. Every US public company must file annual reports (10-K) which contain detailed financial information.</div>
+  </div>
+
+  <div class="week-card">
+    <h2>Week 7 — News & Company Comparison</h2>
+    <ul>
+      >Built news_proxy.py using Flask to fetch live Yahoo Finance RSS news feeds</li>
+      >Added live news headlines as clickable links on each company row</li>
+      >Built company comparison panel showing two companies side by side</li>
+      >Created run.py to start all servers with one command</li>
+    </ul>
+    <div class="what-learned"><strong>Key concept:</strong> RSS feeds are free data streams that websites publish. A local Flask proxy server fetches them on behalf of the browser, bypassing browser security restrictions.</div>
+  </div>
+
+</div>
+</body>
+</html>

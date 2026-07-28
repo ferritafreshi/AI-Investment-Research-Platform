@@ -245,6 +245,16 @@ tbody td { padding: 14px 16px; font-size: 14px; color: #e2e8f0; vertical-align: 
   text-decoration: underline;
 }
 
+/* ===== COMPANY DISPLAY ===== */
+.company-display {
+  font-size: 16px;
+  font-weight: 700;
+  color: #e2e8f0;
+  line-height: 1.4;
+  display: block;
+  margin-bottom: 6px;
+}
+
 /* ===== COMPARE ===== */
 .compare-label {
   font-size: 12px;
@@ -304,3 +314,10 @@ tbody td { padding: 14px 16px; font-size: 14px; color: #e2e8f0; vertical-align: 
 .compare-row:last-child { border-bottom: none; }
 .compare-row .clabel { color: #718096; }
 .compare-row .cvalue { color: #63b3ed; font-weight: 700; }
+
+/* ===== INFO TIP ===== */
+.info-tip {
+  cursor: help;
+  font-size: 12px;
+  margin-left: 4px;
+}

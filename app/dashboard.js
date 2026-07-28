@@ -85,8 +85,7 @@ function renderTable(companies) {
     tr.innerHTML =
       '<td class="rank-cell">' + (i + 1) + '</td>' +
       '<td>' +
-        '<span class="ticker-badge">' + c.ticker + '</span><br>' +
-        '<span class="company-name">' + (c.company_name || '') + '</span>' +
+        '<span class="company-display">' + c.ticker + ' — ' + (c.company_name || '') + '</span>' +
         '<br><br>' +
         '<div style="text-align:left;margin-top:4px;">' + secBtn + '</div>' +
         '<br>' +
@@ -101,12 +100,12 @@ function renderTable(companies) {
       '<td>' +
         '<div class="sub-scores">' +
           '<div class="sub-score-item">' +
-            '<div class="sub-label">Revenue Growth</div>' +
+            '<div class="sub-label">Revenue Growth <span class="info-tip" onclick="openMethodModal(\'revenue\')">ℹ️</span></div>' +
             scoreBar(revScore) +
             '<div class="explanation">' + revExp + '</div>' +
           '</div>' +
           '<div class="sub-score-item">' +
-            '<div class="sub-label">Financial Strength</div>' +
+            '<div class="sub-label">Financial Strength <span class="info-tip" onclick="openMethodModal(\'financial\')">ℹ️</span></div>' +
             scoreBar(finScore) +
             '<div class="explanation">' + finExp + '</div>' +
           '</div>' +
@@ -265,3 +264,118 @@ function clearComparison() {
   document.getElementById('compare-panel').style.display = 'none';
   document.querySelectorAll('.compare-check').forEach(cb => cb.checked = false);
 }
+
+const methodologyData = {
+  revenue: {
+    title: 'Revenue Growth Score',
+    body: `
+      <h3 style="color:#63b3ed;margin-bottom:12px;">What it measures</h3>
+      <p>How fast the company has been growing its revenue over the last 3 years.</p>
+
+      <h3 style="color:#63b3ed;margin:16px 0 12px;">Formula</h3>
+      <p style="background:#16213e;padding:12px;border-radius:8px;font-family:monospace;">
+        CAGR = (Revenue_Year3 / Revenue_Year0) ^ (1/3) - 1
+      </p>
+
+      <h3 style="color:#63b3ed;margin:16px 0 12px;">Score Scale</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">CAGR &lt; 0%</td>
+          <td style="padding:8px;color:#fc8181;">Score: 10 (Very Poor)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">0% – 3%</td>
+          <td style="padding:8px;color:#fc8181;">Score: 20–30 (Low)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">3% – 7%</td>
+          <td style="padding:8px;color:#ecc94b;">Score: 30–50 (Moderate)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">7% – 12%</td>
+          <td style="padding:8px;color:#ecc94b;">Score: 50–70 (Good)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">12% – 20%</td>
+          <td style="padding:8px;color:#48bb78;">Score: 70–90 (Strong)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">20% – 30%</td>
+          <td style="padding:8px;color:#48bb78;">Score: 90–98 (Exceptional)</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;color:#718096;">&gt; 30%</td>
+          <td style="padding:8px;color:#48bb78;">Score: 100 (Extraordinary)</td>
+        </tr>
+      </table>
+
+      <h3 style="color:#63b3ed;margin:16px 0 12px;">Why it matters</h3>
+      <p>Companies that consistently grow revenue are expanding their business. Strong revenue growth often leads to higher profits and stock price appreciation over time.</p>
+    `
+  },
+  financial: {
+    title: 'Financial Strength Score',
+    body: `
+      <h3 style="color:#63b3ed;margin-bottom:12px;">What it measures</h3>
+      <p>How easily the company can pay its debt obligations and whether it generates positive free cash flow.</p>
+
+      <h3 style="color:#63b3ed;margin:16px 0 12px;">Formula</h3>
+      <p style="background:#16213e;padding:12px;border-radius:8px;font-family:monospace;">
+        Interest Coverage = Operating Income / Interest Expense
+      </p>
+      <p style="background:#16213e;padding:12px;border-radius:8px;font-family:monospace;margin-top:8px;">
+        Free Cash Flow = Operating Cash Flow + Capital Expenditures
+      </p>
+
+      <h3 style="color:#63b3ed;margin:16px 0 12px;">Score Scale</h3>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">Coverage &lt; 3x</td>
+          <td style="padding:8px;color:#fc8181;">Base Score: 25 (Weak)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">Coverage 3x – 8x</td>
+          <td style="padding:8px;color:#ecc94b;">Base Score: 55 (Adequate)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">Coverage 8x – 15x</td>
+          <td style="padding:8px;color:#48bb78;">Base Score: 75 (Strong)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">Coverage &gt; 15x</td>
+          <td style="padding:8px;color:#48bb78;">Base Score: 90 (Excellent)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #2d3748;">
+          <td style="padding:8px;color:#718096;">FCF &gt; $1B bonus</td>
+          <td style="padding:8px;color:#48bb78;">+10 to +15 points</td>
+        </tr>
+        <tr>
+          <td style="padding:8px;color:#718096;">No debt</td>
+          <td style="padding:8px;color:#48bb78;">Score: 95</td>
+        </tr>
+      </table>
+
+      <h3 style="color:#63b3ed;margin:16px 0 12px;">Why it matters</h3>
+      <p>A company that cannot cover its interest payments is at risk of financial distress. Strong coverage ratios and positive free cash flow indicate a healthy, resilient business.</p>
+    `
+  }
+};
+
+function openMethodModal(type) {
+  const data = methodologyData[type];
+  if (!data) return;
+  document.getElementById('method-title').textContent = data.title;
+  document.getElementById('method-body').innerHTML = data.body;
+  document.getElementById('method-modal').style.display = 'flex';
+}
+
+function closeMethodModal() {
+  document.getElementById('method-modal').style.display = 'none';
+}
+
+window.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeSecModal();
+    closeMethodModal();
+  }
+});
