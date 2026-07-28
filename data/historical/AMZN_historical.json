@@ -1,0 +1,21 @@
+{
+  "ticker": "AMZN",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 513.98
+    },
+    {
+      "year": "2023",
+      "revenue": 574.78
+    },
+    {
+      "year": "2024",
+      "revenue": 637.96
+    },
+    {
+      "year": "2025",
+      "revenue": 716.92
+    }
+  ]
+}

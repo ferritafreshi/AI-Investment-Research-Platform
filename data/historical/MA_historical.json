@@ -1,0 +1,21 @@
+{
+  "ticker": "MA",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 22.24
+    },
+    {
+      "year": "2023",
+      "revenue": 25.1
+    },
+    {
+      "year": "2024",
+      "revenue": 28.17
+    },
+    {
+      "year": "2025",
+      "revenue": 32.79
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "ticker": "NVDA",
+  "revenue_history": [
+    {
+      "year": "2023",
+      "revenue": 26.97
+    },
+    {
+      "year": "2024",
+      "revenue": 60.92
+    },
+    {
+      "year": "2025",
+      "revenue": 130.5
+    },
+    {
+      "year": "2026",
+      "revenue": 215.94
+    }
+  ]
+}

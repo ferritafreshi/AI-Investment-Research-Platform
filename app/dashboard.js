@@ -15,7 +15,9 @@ function loadDashboard() {
       document.getElementById('loading').style.display = 'none';
       allCompanies = data.companies || [];
       renderSummary(data);
+      initDraggableCards();
       renderTable(allCompanies);
+      setTimeout(function() { renderScoreChart(); }, 100);
     })
     .catch(err => {
       document.getElementById('loading').style.display = 'none';
@@ -44,6 +46,31 @@ function renderSummary(data) {
     const d = new Date(data.generated_at);
     updatedEl.textContent = 'Updated: ' + d.toLocaleString();
   }
+}
+
+function initDraggableCards() {
+  const grid = document.getElementById('summary-grid');
+  if (!grid) return;
+
+  // Restore saved order
+  const saved = localStorage.getItem('summary-card-order');
+  if (saved) {
+    const order = JSON.parse(saved);
+    const cards = Array.from(grid.children);
+    order.forEach(function(id) {
+      const card = cards.find(function(c) { return c.dataset.id === id; });
+      if (card) grid.appendChild(card);
+    });
+  }
+
+  Sortable.create(grid, {
+    animation: 150,
+    ghostClass: 'card-dragging',
+    onEnd: function() {
+      const order = Array.from(grid.children).map(function(c) { return c.dataset.id; });
+      localStorage.setItem('summary-card-order', JSON.stringify(order));
+    }
+  });
 }
 
 function scoreClass(score) {
@@ -82,12 +109,15 @@ function renderTable(companies) {
 
     const tr = document.createElement('tr');
 
+    const chartsBtn = '<button class="sec-btn" style="background:#1a3a2a;color:#68d391;border-color:#2f6b4a;" onclick="openChartsModal(' + i + ')">📊 Charts</button>';
+
     tr.innerHTML =
       '<td class="rank-cell">' + (i + 1) + '</td>' +
       '<td>' +
         '<span class="company-display">' + c.ticker + ' — ' + (c.company_name || '') + '</span>' +
         '<br><br>' +
         '<div style="text-align:left;margin-top:4px;">' + secBtn + '</div>' +
+        '<div style="text-align:left;margin-top:6px;">' + chartsBtn + '</div>' +
         '<br>' +
         '<div style="text-align:left;margin-top:4px;">' +
           '<label class="compare-label">' +
@@ -377,5 +407,136 @@ window.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closeSecModal();
     closeMethodModal();
+    closeChartsModal();
   }
 });
+
+let scoreChartInstance = null;
+let revenueChartInstance = null;
+let breakdownChartInstance = null;
+
+function renderScoreChart() {
+  const n = parseInt(document.getElementById('top-n-select').value);
+  const top = allCompanies.slice(0, n);
+
+  const labels = top.map(function(c) { return c.ticker; });
+  const scores = top.map(function(c) { return c.overall_score || 0; });
+  const colors = scores.map(function(s) {
+    if (s >= 70) return '#48bb78';
+    if (s >= 40) return '#ecc94b';
+    return '#fc8181';
+  });
+
+  const ctx = document.getElementById('score-chart').getContext('2d');
+  if (scoreChartInstance) scoreChartInstance.destroy();
+
+  scoreChartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Overall Score',
+        data: scores,
+        backgroundColor: colors,
+        borderRadius: 6
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+          min: 0,
+          max: 100,
+          ticks: { color: '#718096' },
+          grid: { color: '#2d3748' }
+        },
+        y: {
+          ticks: { color: '#e2e8f0', font: { weight: 'bold' } },
+          grid: { display: false }
+        }
+      }
+    }
+  });
+}
+
+function openChartsModal(index) {
+  const c = allCompanies[index];
+  document.getElementById('charts-modal-title').textContent = c.ticker + ' — ' + c.company_name;
+  document.getElementById('charts-modal').style.display = 'flex';
+
+  // Revenue chart
+  const revHistory = c.revenue_history || [];
+  const revCtx = document.getElementById('revenue-chart').getContext('2d');
+  if (revenueChartInstance) revenueChartInstance.destroy();
+
+  revenueChartInstance = new Chart(revCtx, {
+    type: 'bar',
+    data: {
+      labels: revHistory.map(function(r) { return r.year; }),
+      datasets: [{
+        label: 'Revenue ($B)',
+        data: revHistory.map(function(r) { return r.revenue; }),
+        backgroundColor: '#4299e1',
+        borderRadius: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        x: { ticks: { color: '#718096' }, grid: { color: '#2d3748' } },
+        y: { ticks: { color: '#718096' }, grid: { color: '#2d3748' } }
+      }
+    }
+  });
+
+  // Score breakdown chart
+  const revScore = c.scores?.revenue_growth?.score || 0;
+  const finScore = c.scores?.financial_strength?.score || 0;
+  const brkCtx = document.getElementById('breakdown-chart').getContext('2d');
+  if (breakdownChartInstance) breakdownChartInstance.destroy();
+
+  breakdownChartInstance = new Chart(brkCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Revenue Growth', 'Financial Strength'],
+      datasets: [{
+        label: 'Score',
+        data: [revScore, finScore],
+        backgroundColor: ['#48bb78', '#63b3ed'],
+        borderRadius: 6
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false }
+      },
+      scales: {
+        x: {
+          min: 0,
+          max: 100,
+          ticks: { color: '#718096' },
+          grid: { color: '#2d3748' }
+        },
+        y: {
+          ticks: { color: '#e2e8f0', font: { weight: 'bold' } },
+          grid: { display: false }
+        }
+      }
+    }
+  });
+}
+
+function closeChartsModal() {
+  document.getElementById('charts-modal').style.display = 'none';
+}

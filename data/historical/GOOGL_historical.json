@@ -1,0 +1,21 @@
+{
+  "ticker": "GOOGL",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 282.84
+    },
+    {
+      "year": "2023",
+      "revenue": 307.39
+    },
+    {
+      "year": "2024",
+      "revenue": 350.02
+    },
+    {
+      "year": "2025",
+      "revenue": 402.84
+    }
+  ]
+}

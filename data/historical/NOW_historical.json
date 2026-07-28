@@ -1,0 +1,21 @@
+{
+  "ticker": "NOW",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 7.25
+    },
+    {
+      "year": "2023",
+      "revenue": 8.97
+    },
+    {
+      "year": "2024",
+      "revenue": 10.98
+    },
+    {
+      "year": "2025",
+      "revenue": 13.28
+    }
+  ]
+}

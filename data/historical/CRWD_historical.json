@@ -1,0 +1,21 @@
+{
+  "ticker": "CRWD",
+  "revenue_history": [
+    {
+      "year": "2023",
+      "revenue": 2.24
+    },
+    {
+      "year": "2024",
+      "revenue": 3.06
+    },
+    {
+      "year": "2025",
+      "revenue": 3.95
+    },
+    {
+      "year": "2026",
+      "revenue": 4.81
+    }
+  ]
+}

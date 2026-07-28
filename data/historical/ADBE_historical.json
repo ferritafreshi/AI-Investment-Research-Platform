@@ -1,0 +1,21 @@
+{
+  "ticker": "ADBE",
+  "revenue_history": [
+    {
+      "year": "2022",
+      "revenue": 17.61
+    },
+    {
+      "year": "2023",
+      "revenue": 19.41
+    },
+    {
+      "year": "2024",
+      "revenue": 21.5
+    },
+    {
+      "year": "2025",
+      "revenue": 23.77
+    }
+  ]
+}

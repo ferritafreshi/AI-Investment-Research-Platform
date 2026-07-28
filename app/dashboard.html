@@ -5,8 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Investment Research Platform</title>
   <link rel="stylesheet" href="/app/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 </head>
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="dashboard.js"></script>
+</body>
 
   <header class="header">
     <div>
@@ -17,25 +21,38 @@
   </header>
 
   <main class="container">
-
-    <div id="error-message"></div>
-    <div id="loading">Loading dashboard data...</div>
-
     <!-- Summary Cards -->
-    <div class="summary-grid">
-      <div class="summary-card">
+    <div class="summary-grid" id="summary-grid">
+      <div class="summary-card" data-id="companies">
         <div class="label">Companies</div>
         <div class="value" id="stat-companies">-</div>
       </div>
-      <div class="summary-card">
+      <div class="summary-card" data-id="avg-score">
         <div class="label">Average Score</div>
         <div class="value" id="stat-avg-score">-</div>
       </div>
-      <div class="summary-card">
+      <div class="summary-card" data-id="top-company">
         <div class="label">Top Company</div>
         <div class="sub" id="stat-top-company">-</div>
       </div>
     </div>
+
+    <!-- Top N Score Chart -->
+    <div class="chart-section">
+      <div class="chart-header">
+        <div class="section-title">Company Score Rankings</div>
+        <select id="top-n-select" class="top-n-select" onchange="renderScoreChart()">
+          <option value="5">Top 5</option>
+          <option value="10" selected>Top 10</option>
+          <option value="19">All 19</option>
+        </select>
+      </div>
+      <div class="chart-wrapper">
+        <canvas id="score-chart"></canvas>
+      </div>
+    </div>
+    <div id="error-message"></div>
+    <div id="loading">Loading dashboard data...</div>
 
     <!-- Company Rankings Table -->
     <div class="section-title">Company Rankings</div>
@@ -64,6 +81,30 @@
       <div id="compare-body" class="compare-body"></div>
     </div>
   </main>
+
+<!-- Charts Modal -->
+<div id="charts-modal" class="modal-overlay">
+  <div class="modal-box" style="max-width:700px;">
+    <div class="modal-header">
+      <h2 id="charts-modal-title"></h2>
+      <button class="modal-close" onclick="closeChartsModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div style="margin-bottom:24px;">
+        <h3 style="color:#63b3ed;margin-bottom:12px;">Revenue History (Billions USD)</h3>
+        <div style="height:150px;position:relative;">
+          <canvas id="revenue-chart"></canvas>
+        </div>
+      </div>
+      <div>
+        <h3 style="color:#63b3ed;margin-bottom:12px;">Score Breakdown</h3>
+        <div style="height:120px;position:relative;">
+          <canvas id="breakdown-chart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- SEC Filing Modal -->
   <div id="sec-modal" class="modal-overlay">
