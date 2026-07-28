@@ -1,10 +1,10 @@
 {
-  "current_week": 8,
+  "current_week": 9,
   "total_weeks": 12,
-  "current_lesson": "Week 8: Full Training Portal",
-  "project_completion_percent": 67,
-  "learning_progress_percent": 67,
-  "github_progress_percent": 67,
+  "current_lesson": "Week 9: Charts & Visual Trends",
+  "project_completion_percent": 75,
+  "learning_progress_percent": 75,
+  "github_progress_percent": 75,
   "completed_milestones": [
     "Week 1: Installed Python, GitHub Desktop, VS Code",
     "Week 1: Created and published GitHub repository",
@@ -29,9 +29,13 @@
     "Week 7: Created run.py to launch all servers with one command"
     "Week 8: Built lessons.html with weekly lesson notes for Weeks 1-7",
     "Week 8: Built glossary.html with searchable financial and technical terms",
-    "Week 8: Built quiz.html with 10 questions, Previous/Next navigation, and answer review"
+    "Week 8: Built quiz.html with 10 questions, Previous/Next navigation, and answer review",
+    "Week 9: Built top N score bar chart on dashboard with configurable dropdown",
+    "Week 9: Built per-company revenue history chart using yfinance historical data",
+    "Week 9: Built per-company score breakdown chart in modal popup",
+    "Week 9: Made summary cards draggable with saved order via localStorage"
   ],
   "current_blockers": [],
-  "recommended_next_task": "Start Week 9: Charts & Visual Trends",
-  "estimated_time_remaining_hours": 40
+  "recommended_next_task": "Start Week 10: AI Q&A Engine",
+  "estimated_time_remaining_hours": 30
 }

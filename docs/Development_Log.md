@@ -41,3 +41,9 @@
 - Built training/quiz.html with 10 questions, Previous/Next navigation, and answer review mode
 - Added navigation links to all training portal pages
 - Added score methodology
+## Week 9
+- Built fetch_historical.py to fetch 4 years of annual revenue for all 19 companies
+- Added top N score bar chart at top of dashboard with Top 5/10/19 dropdown
+- Built per-company Charts modal with revenue history and score breakdown charts
+- Made summary cards draggable with order saved in localStorage
+- Used Chart.js for all charts (free, no API key needed)
