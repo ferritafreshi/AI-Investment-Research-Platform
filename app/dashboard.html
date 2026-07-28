@@ -54,6 +54,15 @@
     <div id="error-message"></div>
     <div id="loading">Loading dashboard data...</div>
 
+    <!-- Comparison Panel -->
+    <div id="compare-panel" class="compare-panel" style="display:none;">
+      <div class="compare-header">
+        <h2>Company Comparison</h2>
+        <button class="modal-close" onclick="clearComparison()">✕</button>
+      </div>
+      <div id="compare-body" class="compare-body"></div>
+    </div>
+    
     <!-- Company Rankings Table -->
     <div class="section-title">Company Rankings</div>
     <div class="table-wrapper">
@@ -72,14 +81,6 @@
       </table>
     </div>
 
-    <!-- Comparison Panel -->
-    <div id="compare-panel" class="compare-panel" style="display:none;">
-      <div class="compare-header">
-        <h2>Company Comparison</h2>
-        <button class="modal-close" onclick="clearComparison()">✕</button>
-      </div>
-      <div id="compare-body" class="compare-body"></div>
-    </div>
   </main>
 
 <!-- Charts Modal -->
