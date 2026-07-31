@@ -14,6 +14,7 @@ function loadDashboard() {
     .then(data => {
       document.getElementById('loading').style.display = 'none';
       allCompanies = data.companies || [];
+      initQA(allCompanies);
       renderSummary(data);
       initDraggableCards();
       renderTable(allCompanies);
@@ -539,4 +540,19 @@ function openChartsModal(index) {
 
 function closeChartsModal() {
   document.getElementById('charts-modal').style.display = 'none';
+}
+
+function askQuestion() {
+  const input = document.getElementById('qa-input');
+  const question = input.value.trim();
+  if (!question) return;
+  const answer = answerQuestion(question);
+  const answerEl = document.getElementById('qa-answer');
+  answerEl.textContent = answer;
+  answerEl.style.display = 'block';
+}
+
+function askPreset(question) {
+  document.getElementById('qa-input').value = question;
+  askQuestion();
 }

@@ -9,6 +9,7 @@
 </head>
 <body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="qa_engine.js"></script>
   <script src="dashboard.js"></script>
 </body>
 
@@ -63,6 +64,24 @@
       <div id="compare-body" class="compare-body"></div>
     </div>
     
+    <!-- Q&A Engine -->
+    <div class="qa-section">
+      <div class="section-title">Ask a Question</div>
+      <div class="qa-box">
+        <input type="text" id="qa-input" class="qa-input" placeholder="e.g. What is MSFT score? Which company has the highest revenue growth?" onkeydown="if(event.key==='Enter') askQuestion()">
+        <button class="qa-btn" onclick="askQuestion()">Ask</button>
+      </div>
+      <div id="qa-answer" class="qa-answer" style="display:none;"></div>
+      <div class="qa-suggestions">
+        <span class="qa-hint">Try:</span>
+        <button class="qa-chip" onclick="askPreset('Which company has the highest score?')">Highest score?</button>
+        <button class="qa-chip" onclick="askPreset('Which company has the lowest score?')">Lowest score?</button>
+        <button class="qa-chip" onclick="askPreset('What is the average score?')">Average score?</button>
+        <button class="qa-chip" onclick="askPreset('How many companies are in the watchlist?')">How many companies?</button>
+        <button class="qa-chip" onclick="askPreset('What is NVDA score?')">NVDA score?</button>
+        <button class="qa-chip" onclick="askPreset('What is MSFT revenue?')">MSFT revenue?</button>
+      </div>
+    </div>
     <!-- Company Rankings Table -->
     <div class="section-title">Company Rankings</div>
     <div class="table-wrapper">
