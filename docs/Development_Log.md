@@ -59,3 +59,7 @@
 - Added Risk Analysis modal showing overall risk level and per-factor breakdown
 - Unified all action button styles (SEC Filing, Risk Analysis, Charts)
 - Enlarged Compare checkbox and action buttons for better usability
+## Week 12
+- Updated README.md with full platform documentation, project structure, and scoring methodology
+- Created GitHub Release v1.0.0
+- All 12 weeks complete — MVP platform delivered

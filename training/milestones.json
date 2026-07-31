@@ -10,5 +10,5 @@
   { "week": 9, "title": "Charts & Visual Trends", "status": "complete", "description": "Add price charts and visual score trends for each company." },
   { "week": 10, "title": "AI Q&A Engine", "status": "complete", "description": "Build AI Q&A engine to answer questions about the project and training." },
   { "week": 11, "title": "Dashboard Polish & Risk Analysis", "status": "complete", "description": "Polish dashboard UI and add risk analysis modal with debt, valuation, and size risk factors." },
-  { "week": 12, "title": "MVP Hardening & Release", "status": "in_progress", "description": "Final testing, documentation, and public release preparation." }
+  { "week": 12, "title": "MVP Hardening & Release", "status": "complete", "description": "Final testing, documentation, and public release preparation." }
 ]
