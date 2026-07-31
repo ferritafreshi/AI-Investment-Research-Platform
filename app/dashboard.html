@@ -11,6 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <script src="qa_engine.js"></script>
   <script src="dashboard.js"></script>
+  <script src="risk_engine.js"></script>
 </body>
 
   <header class="header">
@@ -122,6 +123,23 @@
           <canvas id="breakdown-chart"></canvas>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Risk Analysis Modal -->
+<div id="risk-modal" class="modal-overlay">
+  <div class="modal-box" style="max-width:600px;">
+    <div class="modal-header">
+      <h2 id="risk-modal-title"></h2>
+      <button class="modal-close" onclick="closeRiskModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="risk-overall" style="text-align:center;padding:16px 0 24px;"></div>
+      <div id="risk-factors"></div>
+      <p style="margin-top:20px;font-size:12px;color:#4a5568;">
+        Risk is calculated from financial strength score, P/E valuation, and market cap size. This is not financial advice.
+      </p>
     </div>
   </div>
 </div>

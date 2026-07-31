@@ -117,24 +117,61 @@ tbody td { padding: 14px 16px; font-size: 14px; color: #e2e8f0; vertical-align: 
   margin-bottom: 20px; display: none;
 }
 
-/* ===== SEC FILING BUTTON ===== */
-.sec-btn {
-  margin-top: 8px;
+/* ===== ACTION BUTTONS ===== */
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+  align-items: flex-start;
+}
+.action-btn {
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 7px;
+  cursor: pointer;
+  border: 1px solid;
+  transition: background 0.15s;
+  width: 100%;
+  text-align: left;
+}
+.sec-action-btn {
   background: #2b4a7a;
   color: #90cdf4;
-  border: 1px solid #4a74b6;
-  border-radius: 6px;
-  padding: 5px 10px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background 0.15s;
+  border-color: #4a74b6;
 }
-.sec-btn:hover { background: #3a5f99; }
+.sec-action-btn:hover { background: #3a5f99; }
 
-.sec-btn-wrapper {
-  text-align: center;
-  margin-top: 8px;
-  width: 100%;
+.risk-action-btn {
+  background: #2b4a7a;
+  color: #90cdf4;
+  border-color: #4a74b6;
+}
+.risk-action-btn:hover { background: #3a5f99; }
+
+.charts-action-btn {
+  background: #2b4a7a;
+  color: #90cdf4;
+  border-color: #4a74b6;
+}
+.charts-action-btn:hover { background: #3a5f99; }
+
+/* ===== COMPARE LARGER ===== */
+.compare-label-lg {
+  font-size: 14px;
+  color: #a0aec0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+.compare-check-lg {
+  cursor: pointer;
+  accent-color: #63b3ed;
+  width: 16px;
+  height: 16px;
 }
 
 /* ===== MODAL ===== */
