@@ -105,24 +105,27 @@ function renderTable(companies) {
     const finExp = c.scores && c.scores.financial_strength ? c.scores.financial_strength.explanation : '';
 
     const secBtn = c.sec_filing
-      ? '<button class="sec-btn" onclick="openSecModal(' + i + ')">SEC Filing</button>'
+      ? '<button class="action-btn sec-action-btn" onclick="openSecModal(' + i + ')">SEC Filing</button>'
       : '';
 
-    const tr = document.createElement('tr');
+    const riskData = calculateRisk(c);
+    const riskBtn = '<button class="action-btn risk-action-btn" onclick="openRiskModal(' + i + ')">' + ' Risk Analysis</button>';
 
-    const chartsBtn = '<button class="sec-btn" style="background:#1a3a2a;color:#68d391;border-color:#2f6b4a;" onclick="openChartsModal(' + i + ')">📊 Charts</button>';
+    const chartsBtn = '<button class="action-btn charts-action-btn" onclick="openChartsModal(' + i + ')">Charts</button>';
+    const tr = document.createElement('tr');
 
     tr.innerHTML =
       '<td class="rank-cell">' + (i + 1) + '</td>' +
       '<td>' +
         '<span class="company-display">' + c.ticker + ' — ' + (c.company_name || '') + '</span>' +
-        '<br><br>' +
-        '<div style="text-align:left;margin-top:4px;">' + secBtn + '</div>' +
-        '<div style="text-align:left;margin-top:6px;">' + chartsBtn + '</div>' +
-        '<br>' +
-        '<div style="text-align:left;margin-top:4px;">' +
-          '<label class="compare-label">' +
-            '<input type="checkbox" class="compare-check" value="' + i + '" onchange="handleCompare(this)">' +
+        '<div class="action-buttons">' +
+          secBtn +
+          riskBtn +
+          chartsBtn +
+        '</div>' +
+        '<div style="margin-top:10px;">' +
+          '<label class="compare-label-lg">' +
+            '<input type="checkbox" class="compare-check-lg" value="' + i + '" onchange="handleCompare(this)">' +
             ' Compare' +
           '</label>' +
         '</div>' +
@@ -215,9 +218,13 @@ function closeSecModal() {
   document.getElementById('sec-modal').style.display = 'none';
 }
 
-window.addEventListener('click', (e) => {
-  const modal = document.getElementById('sec-modal');
-  if (e.target === modal) closeSecModal();
+window.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeSecModal();
+    closeMethodModal();
+    closeChartsModal();
+    closeRiskModal();
+  }
 });
 
 window.addEventListener('keydown', (e) => {
@@ -555,4 +562,32 @@ function askQuestion() {
 function askPreset(question) {
   document.getElementById('qa-input').value = question;
   askQuestion();
+}
+
+function openRiskModal(index) {
+  const c = allCompanies[index];
+  const risk = calculateRisk(c);
+
+  document.getElementById('risk-modal-title').textContent = c.ticker + ' — ' + c.company_name + ' Risk Analysis';
+
+  document.getElementById('risk-overall').innerHTML =
+    '<div style="font-size:48px;">' + risk.overallEmoji + '</div>' +
+    '<div style="font-size:22px;font-weight:700;color:' + risk.overallColor + ';margin-top:8px;">' + risk.overall + ' Risk</div>';
+
+  const factorsHtml = risk.factors.map(function(f) {
+    return '<div style="background:#16213e;border:1px solid #2d3748;border-left:4px solid ' + f.color + ';border-radius:8px;padding:14px;margin-bottom:12px;">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">' +
+        '<span style="font-weight:600;color:#e2e8f0;font-size:14px;">' + f.label + '</span>' +
+        '<span style="font-weight:700;color:' + f.color + ';font-size:13px;">' + f.level + '</span>' +
+      '</div>' +
+      '<div style="font-size:13px;color:#a0aec0;">' + f.detail + '</div>' +
+    '</div>';
+  }).join('');
+
+  document.getElementById('risk-factors').innerHTML = factorsHtml;
+  document.getElementById('risk-modal').style.display = 'flex';
+}
+
+function closeRiskModal() {
+  document.getElementById('risk-modal').style.display = 'none';
 }
