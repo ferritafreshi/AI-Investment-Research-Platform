@@ -8,7 +8,7 @@
   { "week": 7, "title": "News & Company Comparison", "status": "complete", "description": "Added live Yahoo Finance news feed and side-by-side company comparison panel." },
   { "week": 8, "title": "Full Training Portal", "status": "complete", "description": "Building lessons, glossary, and quiz pages for the training portal." },
   { "week": 9, "title": "Charts & Visual Trends", "status": "complete", "description": "Add price charts and visual score trends for each company." },
-  { "week": 10, "title": "AI Q&A Engine", "status": "in_progress", "description": "Build a question and answer engine about the companies and scores." },
-  { "week": 11, "title": "Dashboard Polish & Risk Analysis", "status": "upcoming", "description": "Improve UI design and add risk scoring to each company." },
-  { "week": 12, "title": "MVP Hardening & Release", "status": "upcoming", "description": "Final testing, documentation, and public release preparation." }
+  { "week": 10, "title": "AI Q&A Engine", "status": "complete", "description": "Build AI Q&A engine to answer questions about the project and training." },
+  { "week": 11, "title": "Dashboard Polish & Risk Analysis", "status": "complete", "description": "Polish dashboard UI and add risk analysis modal with debt, valuation, and size risk factors." },
+  { "week": 12, "title": "MVP Hardening & Release", "status": "in_progress", "description": "Final testing, documentation, and public release preparation." }
 ]

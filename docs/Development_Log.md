@@ -47,3 +47,15 @@
 - Built per-company Charts modal with revenue history and score breakdown charts
 - Made summary cards draggable with order saved in localStorage
 - Used Chart.js for all charts (free, no API key needed)
+## Week 10
+- Built app/qa_engine.js with natural language question matching
+- Added support for ticker-specific queries (score, revenue, EPS, P/E, FCF)
+- Added year-specific revenue queries using historical data
+- Added multi-ticker comparison (e.g. Compare MSFT and GOOGL)
+- Added financial concept explanations (EPS, P/E, CAGR, FCF, 10-K, SEC, etc.)
+- Linked answers to Yahoo Finance and SEC EDGAR for further reading
+## Week 11
+- Built app/risk_engine.js with debt risk, valuation risk, and size risk scoring
+- Added Risk Analysis modal showing overall risk level and per-factor breakdown
+- Unified all action button styles (SEC Filing, Risk Analysis, Charts)
+- Enlarged Compare checkbox and action buttons for better usability

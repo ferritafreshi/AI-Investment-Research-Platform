@@ -1,10 +1,10 @@
 {
-  "current_week": 9,
+  "current_week": 11,
   "total_weeks": 12,
-  "current_lesson": "Week 9: Charts & Visual Trends",
-  "project_completion_percent": 75,
-  "learning_progress_percent": 75,
-  "github_progress_percent": 75,
+  "current_lesson": "Week 11: Dashboard Polish & Risk Analysis",
+  "project_completion_percent": 92,
+  "learning_progress_percent": 92,
+  "github_progress_percent": 92,
   "completed_milestones": [
     "Week 1: Installed Python, GitHub Desktop, VS Code",
     "Week 1: Created and published GitHub repository",
@@ -34,8 +34,14 @@
     "Week 9: Built per-company revenue history chart using yfinance historical data",
     "Week 9: Built per-company score breakdown chart in modal popup",
     "Week 9: Made summary cards draggable with saved order via localStorage"
+    "Week 10: Built natural language Q&A engine from local data",
+    "Week 10: Added year-specific revenue queries and multi-ticker comparison",
+    "Week 10: Added financial concept explanations with Yahoo Finance and SEC links",
+    "Week 11: Built Risk Analysis modal with debt, valuation, and size risk factors",
+    "Week 11: Unified button styling across SEC Filing, Risk Analysis, and Charts",
+    "Week 11: Enlarged Compare checkbox and action buttons"
   ],
   "current_blockers": [],
-  "recommended_next_task": "Start Week 10: AI Q&A Engine",
-  "estimated_time_remaining_hours": 30
+  "recommended_next_task": "Start Week 12: MVP Hardening & Release",
+  "estimated_time_remaining_hours": 8
 }
